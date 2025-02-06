@@ -10,7 +10,7 @@ import dhaval from '../assets/teamimages/dhaval.jpg';
 import tarang from '../assets/teamimages/tarang.jpg';
 import nisarg from '../assets/teamimages/nisarg.jpg';
 import nidhi from '../assets/teamimages/nidhi.jpg';
-import arya from '../assets/teamimages/malak.jpg';
+import arya from '../assets/teamimages/arya.jpg';
 import samipya from '../assets/teamimages/malak.jpg';
 import jenish from '../assets/teamimages/malak.jpg';
 import krutagna from '../assets/teamimages/malak.jpg';
@@ -75,12 +75,12 @@ const TeamSection = () => {
       { 'name': "Shivang Parmar", 'image': "https://via.placeholder.com/150", 'designation': "Joint ISTE Graphics Coordinator", 'linkedin': "https://www.linkedin.com/in/shivang-parmar" },
       { 'name': "Riddhi Trevadiya", 'image': "https://via.placeholder.com/150", 'designation': "Joint ISTE Graphics Coordinator", 'linkedin': "https://www.linkedin.com/in/riddhi-trevadiya" },
       { 'name': "Dhruva Desai", 'image': "https://via.placeholder.com/150", 'designation': "ISTE Decoration Coordinator", 'linkedin': "https://www.linkedin.com/in/dhruva-desai-2314b4344/" },
-      { 'name': "Kairavi Parikh", 'image': "https://via.placeholder.com/150", 'designation': "Joint ISTE Decoration Coordinator", 'linkedin': "https://linkedin.com" },
+      { 'name': "Kairavi Parikh", 'image': "https://via.placeholder.com/150", 'designation': "Joint ISTE Decoration Coordinator", 'linkedin': "https://www.linkedin.com/in/kairavi-parikh-45704622b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
   ]
 
   const developerTeam = [
     { name: "Tarang Motiyani", image: tarang, designation: "Web Astronaut", github: "https://github.com/Tarang52" },
-    { name: "Arya Panchal", image: "https://via.placeholder.com/150", designation: "Web Astronaut", github: "https://github.com/Arya664" },
+    { name: "Arya Panchal", image: arya, designation: "Web Astronaut", github: "https://github.com/Arya664" },
     { name: "Nisarg Patel", image: nisarg, designation: "Web Astronaut", github: "https://github.com/nisargpatel7042lva" },
     { name: "Siddharth Panchal", image: sid, designation: "Web Astronaut", github: "https://github.com/siddharth-09" },
     { name: "Dhaval Patel", image: dhaval, designation: "Web Astronaut", github: "https://github.com/DhavalPhooski" },

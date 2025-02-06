@@ -53,6 +53,15 @@ const Navbar = () => {
     }
   };
 
+  const EventSection = ()=>{
+    if(window.location.pathname=='/'){
+      scrollToSection("events-section")
+    }
+    else{
+      navigate('/events')
+    }
+  }
+
   return (
     <header className={`navbar ${showNavbar ? "show" : "hide"}`}>
       {/* 🔥 Made the logo clickable to navigate to home */}
@@ -82,11 +91,19 @@ const Navbar = () => {
           <li className="nav-item" onClick={() => { navigate("/aboutus") }}>
             ABOUT
           </li>
-          <li className="nav-item" onClick={() => scrollToSection("events-section")}>
+          <li className="nav-item" onClick={() =>{
+            if(window.location.pathname=='/'){
+              scrollToSection("events-section")
+            }
+            else{
+              navigate('/events')
+            }
+          } 
+          }>
             EVENTS
           </li>
           <li className="nav-item">HISTORY</li>
-          <li className="nav-item" onClick={() => scrollToSection("team-section")}>
+          <li className="nav-item" onClick={() =>{scrollToSection("team-section")}}>
             TEAM
           </li>
         </ul>
@@ -119,7 +136,8 @@ const Navbar = () => {
             <li className="nav-item" onClick={() => { toggleMenu(); navigate("/aboutus"); }}>
               ABOUT
             </li>
-            <li className="nav-item" onClick={() => { toggleMenu(); scrollToSection("events-section"); }}>
+            <li className="nav-item" onClick={() => { EventSection() ;toggleMenu();
+            }}>
               EVENTS
             </li>
             <li className="nav-item" onClick={() => { toggleMenu(); scrollToSection(""); }}>

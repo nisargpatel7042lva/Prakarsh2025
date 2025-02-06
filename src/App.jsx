@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router"
 import Homepage from "./Components/Homepage"
 import EventCard from "./Components/EventCard"
 import AboutUs from "./Components/Aboutus"
-
 import Navbar from "./Components/Navbar"
 function App() {
   

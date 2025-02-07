@@ -75,7 +75,7 @@ p {
 
 .card2:hover {
   transform: translateY(-8px);
-  box-shadow: 0px 0px 30px hwb(180 0% 0% / 0.8),
+  box-shadow: 0px 0px 30px #00ffffcc,
     0px 0px 60px rgba(0, 255, 255, 0.6);
 }
 /* 
@@ -99,7 +99,7 @@ p {
 
 .cardDetails {
   position: fixed;
-  top: 50%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(10, 10, 30, 0.9);

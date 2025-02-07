@@ -7,7 +7,7 @@ const RegisterButton = () => {
         <>
             <div className='container-register'>
                 <button>
-                    <img src={registerImage} alt="Register Icon" width="36" height="36" />
+                    <img src={registerImage} className='img' alt="Register Icon" width="36" height="36" />
                     <span className="now">Now!</span>
                     <span className="play">Register</span>
                 </button>

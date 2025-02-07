@@ -41,7 +41,7 @@ const events = [
   { id: 19, category: "NonTech", title: "Infinity Quest", details: "“A treasure hunt to the universe.” Get ready for “Infinity Quest,” an electrifying Marvel-themed treasure hunt with an engineering twist!" },
   { id: 20, category: "ESports", title: "BGMI Conquest", details: "Land. Fight. Dominate. The Battleground is Yours! The battle begins at BGMI, where warriors collide in an intense fight for survival!" },
   { id: 21, category: "NonTech", title: "Midnight Mystery", details: "“Face the dark, Escape the maze, Conquer the Mystery.” Step into a world of mystery and darkness with Challenges! This non-tech event is designed to test your instincts, teamwork, and problem-solving skills." },
-  { id: 21, category: "OpenR", title: "Concert", details: "“Concert" },
+  { id: 21, category: "OpenR", title: "OpenR", details: "“Open Innovations" },
 ];
 const viewMore = { id: 22, category: "ViewMe", title: "View All...", details: "Jovo mane" };
 

@@ -193,10 +193,10 @@ const events = [
   {
     id: 22,
     category: "OpenR",
-    title: "Concert",
+    title: "OpenR",
     img: "Hi",
     details:
-      "“Concert",
+      "“OpenR",
   },
 ];
 

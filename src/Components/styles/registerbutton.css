@@ -35,9 +35,11 @@ button:active {
     transition: all 100ms ease;
 }
 
-button svg {
+button img {
     transition: all 0.5s ease;
     z-index: 2;
+    width: 50px; /* Ensure the image has a fixed size */
+    height: 50px; /* Ensure the image has a fixed size */
 }
 
 .play {
@@ -45,8 +47,8 @@ button svg {
     transition-delay: 300ms;
 }
 
-button:hover svg {
-    transform: scale(3) translate(50%);
+button:hover img {
+    transform: scale(1.5) translate(100%);
 }
 
 .now {

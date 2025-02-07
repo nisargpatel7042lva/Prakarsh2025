@@ -86,7 +86,7 @@
         border-radius: 10px;
         /* Round the corners */
         padding: 15px;
-        background: linear-gradient(45deg, rgba(255, 0, 255, 0.8), rgba(0, 123, 255, 0.8));
+        background: linear-gradient(45deg, rgb(85 19 100), rgb(0 0 0));
         /* Light glowing effect */
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         display: flex;

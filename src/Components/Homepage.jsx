@@ -28,16 +28,16 @@ export default function Homepage() {
             });
         }
     }, []);
-    
+
     return (
         <>
             <HeroSection />
-             <div className="homepage-container">
+            <div className="homepage-container">
                 <img src={backgroundStars} className="backgroundStars" alt="#" />
                 <div className="SolarSystemBackground"><canvas id="canvasSolarSystemAlignment" ref={solarref}>
-                    </canvas>
-                    </div> 
-                
+                </canvas>
+                </div>
+
                 <Timer />
 
                 {/* Content Sections */}
@@ -45,17 +45,17 @@ export default function Homepage() {
                     <Event_Random />
                 </div>
                 <div id="timeline">
-            <div className="co1">  
-            <div className="name">TIME LINE</div>
-            </div>
+                    <div className="co1">
+                        <div className="name">TIME LINE</div>
+                    </div>
                     <Timeline />
                 </div>
                 <div id="team-section">
                     <TeamSection />
                 </div>
                 <Sponsor />
-</div>
-                <Footer />
+            </div>
+            <Footer />
         </>
     );
 }

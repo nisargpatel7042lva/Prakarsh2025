@@ -14,6 +14,9 @@ import PUBG from "../assets/EventCardSvg/PUBG.png";
 import Cricket from "../assets/EventCardSvg/Cricket.png";
 import Maze from "../assets/EventCardSvg/Maze.png";
 import Pirate2 from "../assets/EventCardSvg/Pirate2.png";
+import stellar from "../assets/EventCardSvg/stellarcosmos.jpg";
+import brawl from "../assets/EventCardSvg/brawl.svg";
+import Vr from "../assets/EventCardSvg/Vr.png";
 
 import img_IOTWorkshop from "../assets/Event Logos/Workshop & Mega Event/IOT Workshop.png";
 import img_Aeromodeling from "../assets/Event Logos/Workshop & Mega Event/The Art of Aero Modelling.png";
@@ -128,7 +131,7 @@ const events = [
   {
     id: 11,
     category: "NonTech",
-    title: "Box Cricket League",  
+    title: "Box Cricket League",
     img: Cricket,
     image: img_BoxCricketLeague,
     details: "Experience fast-paced cricket action in a compact arena!",
@@ -188,6 +191,47 @@ const events = [
     link: "https://lu.ma/k7qw8bhs",
     image: img_OpenR,
     details: "A special Open-R workshop event!",
+  },
+  {
+    id: 19,
+    category: "Tech",
+    title: "Stellar Cosmos",
+    img: stellar,
+    image: img_StellarCosmos,
+    details: "Teams compete in a virtual space combat simulator!",
+  },
+  {
+    id: 20,
+    category: "Tech",
+    title: "The Ultimate VR Experience",
+    img: Vr,
+    image: img_VR,
+    details:
+      "Explore a custom designed game that combines immersive virtual reality with interactive gameplay, offering participants ",
+  },
+  {
+    id: 21,
+    category: "Tech",
+    title: "Brawl Bridge",
+    img: brawl,
+    image: img_BrawlBridge,
+    details: "Solve puzzles in a thrilling late-night mystery challenge!",
+  },
+  {
+    id: 22,
+    category: "NonTech",
+    title: "Infinite Quest",
+    img: Maze,
+    image: img_InfiniteQuest,
+    details: "Solve puzzles in a thrilling late-night mystery challenge!",
+  },
+  {
+    id: 23,
+    category: "NonTech",
+    title: "Pickleball Palooz",
+    img: Maze,
+    image: img_PickleballPalooz,
+    details: "Solve puzzles in a thrilling late-night mystery challenge!",
   },
 ];
 

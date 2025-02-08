@@ -4,7 +4,7 @@ import "../Components/styles/Timer.css"; // Import external styles
 
 export default function Timer() {
     const [isVisible, setIsVisible] = useState(true);
-    const eventDate = useMemo(() => new Date("2025-02-28T00:00:00").getTime(), []);
+    const eventDate = useMemo(() => new Date("2025-02-25T00:00:00").getTime(), []);
 
     // Renderer function for Countdown component
     const renderer = useCallback(({ days, hours, minutes, seconds, completed }) => {

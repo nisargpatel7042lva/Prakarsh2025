@@ -9,7 +9,8 @@ import Sponsor from "./Sponsor";
 import HeroSection from "./HeroSection";
 import { useEffect, useRef } from "react";
 import { Rive } from "@rive-app/canvas";
-import "./styles/Homepage.css"
+import "./styles/Homepage.css";
+import backgroundStars from "../assets/Stars.png";
 
 export default function Homepage() {
     const solarref = useRef(null);
@@ -32,6 +33,7 @@ export default function Homepage() {
         <>
             <HeroSection />
              <div className="homepage-container">
+                <img src={backgroundStars} className="backgroundStars" alt="#" />
                 <div className="SolarSystemBackground"><canvas id="canvasSolarSystemAlignment" ref={solarref}>
                     </canvas>
                     </div> 

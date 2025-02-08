@@ -1,4 +1,4 @@
-Main container
+/* Main container */
 
 .sponsor-container {
     width: 100%;
@@ -12,38 +12,39 @@ Main container
 }
 
 
-/* Common styling for all sponsors */
-
-.main-sponsor,
-.sponsor-box {
-    background-color: #000000b9;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    box-shadow: 0 0 8px cyan, 0 0 15px rgba(0, 255, 255, 0.6);
-    /* Reduced glow */
-    border: 3px solid cyan;
-    /* Cyan border */
-    transition: transform 0.3s ease-in-out;
-}
-
-
-/* Hover Effect: Slight Enlargement */
-
-.main-sponsor:hover,
-.sponsor-box:hover {
-    transform: scale(1.05);
-}
-
-
-/* Main sponsor */
+/* Main Sponsor */
 
 .main-sponsor {
     width: 100%;
-    height: 150px;
+    text-align: center;
+}
+
+.main-sponsor img {
+    max-width: 80%;
+    height: auto;
+    border: 2px solid cyan;
+    box-shadow: 0 0 8px cyan, 0 4px 10px rgba(0, 255, 255, 0.3);
+    /* Softer glow */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* IMS Sponsor - Full width */
+
+.ims-sponsor {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.ims-sponsor img {
+    max-width: 250px;
+    height: auto;
+    border: 2px solid cyan;
+    box-shadow: 0 0 8px cyan, 0 4px 10px rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
@@ -51,25 +52,92 @@ Main container
 
 .sub-sponsors {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
 
-/* Sub sponsor boxes */
+/* Sponsor Row (Max 3 per row) */
 
-.sponsor-box {
-    height: 120px;
-    font-size: 18px;
-    font-weight: 500;
+.sponsor-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
 }
 
 
-/* Responsive: Stack sub-sponsors in a single column on small screens */
+/* Sponsor Box */
+
+.sponsor-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Sponsor Images with Softer Glow */
+
+.sponsor-box img {
+    max-width: 200px;
+    height: auto;
+    /* border: 2px solid cyan; */
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 2px cyan);
+    /* Cyan shadow around transparent parts */
+}
+
+.sponsor-row-fitness {
+    display: grid;
+    justify-content: center;
+}
+
+
+/* Hover Effects */
+
+.sponsor-box img:hover,
+.main-sponsor img:hover,
+.ims-sponsor img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px cyan);
+    /* Increased glow on hover */
+}
+
+.radhika-jewellers {
+    padding: 10px;
+}
+
+
+/* Responsive: Stack on small screens */
 
 @media (max-width: 768px) {
-    .sub-sponsors {
-        grid-template-columns: 1fr;
+    .sponsor-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .main-sponsor img {
+        max-width: 90%;
+    }
+    .ims-sponsor img {
+        max-width: 200px;
+    }
+    .sponsor-box img {
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsor-row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .main-sponsor img {
+        max-width: 100%;
+    }
+    .ims-sponsor img {
+        max-width: 180px;
+    }
+    .sponsor-box img {
+        max-width: 150px;
     }
 }

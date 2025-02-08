@@ -9,6 +9,18 @@
     box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
     background-color: #221b36;
   }
+  @media (min-width:1600px){
+    .hero-section {
+      position: relative;
+      margin-top:3.4%;
+      padding: 0;
+      width: 100%;
+      aspect-ratio: 2046/1081;
+      overflow: hidden;
+      box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+      background-color: #221b36;
+    }
+  }
   .AstroPov {
     width: 100%;
     height: 100%;

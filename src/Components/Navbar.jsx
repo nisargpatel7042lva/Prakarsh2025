@@ -98,7 +98,7 @@ const Navbar = () => {
           <li className="nav-item" onClick={EventSection}>
             EVENTS
           </li>
-          <li className="nav-item">TIMELINE</li>
+          <li className="nav-item" onClick={EventSection}>TIMELINE</li>
           <li className="nav-item" onClick={() => scrollToSection("team-section")}>
             TEAM
           </li>

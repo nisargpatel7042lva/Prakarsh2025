@@ -9,7 +9,7 @@
         width: 100%;
         overflow-x: hidden;
         color: #00eaff;
-    text-shadow: 0 0 5px #00eaff;
+        text-shadow: 0 0 5px #00eaff;
         /* Prevents horizontal scrolling */
     }
     
@@ -163,10 +163,12 @@
         text-align: center;
     }
     /* 📱 Mobile Responsiveness */
-    .img{
+    
+    .img {
         max-height: 180px;
-    max-width: 180px;
+        max-width: 180px;
     }
+    
     @media (max-width: 768px) {
         .card-container {
             grid-template-columns: repeat(2, 1fr);
@@ -208,7 +210,7 @@
             /* Even smaller card height */
             padding: 8px;
         }
-        .img{
+        .img {
             max-width: 100px;
             max-height: 100px;
         }
@@ -216,7 +218,7 @@
             height: 200px;
             /* Shorten large card height */
         }
-        h2{
+        h2 {
             font-size: 12px;
         }
         .cardDetails {
@@ -330,7 +332,6 @@
             transform: translateY(0px);
         }
     }
-
     
     .event-12 {
         opacity: 40%;
@@ -937,6 +938,7 @@
         aspect-ratio: 1/1;
         bottom: 0%;
     }
+    
     .event-7 {
         opacity: 40%;
         z-index: -1;
@@ -1149,4 +1151,25 @@
     .floating-register-button:hover {
         background-color: #0056b3;
         /* Change color on hover */
+    }
+    
+    .problem-statement-link {
+        text-decoration: underline;
+        color: white;
+        /* You can adjust the color */
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .problem-statement-link:hover {
+        color: rgb(92, 89, 89);
+        /* Darker shade for hover effect */
+    }
+    
+    .event-desc {
+        font-size: 36px;
+    }
+    
+    .openr-head {
+        font-size: 24px;
     }

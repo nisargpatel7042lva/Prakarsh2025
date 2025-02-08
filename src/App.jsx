@@ -10,6 +10,7 @@ function App() {
     
     <BrowserRouter>
     <Navbar/>
+
     <Routes>
       <Route path='/' element={<Homepage/>}/>
       <Route path='/events' element={<EventCard />}/>

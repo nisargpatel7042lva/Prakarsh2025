@@ -16,7 +16,7 @@ import aryaa from '../assets/teamimages/arya2.jpg';
 import samipya from '../assets/teamimages/malak.jpg';
 import jenish from '../assets/teamimages/malak.jpg';
 import krutagna from '../assets/teamimages/malak.jpg';
-import piyush from '../assets/teamimages/malak.jpg';
+import piyush from '../assets/teamimages/piyush.jpg';
 import yash from '../assets/teamimages/yash.jpg';
 import vinit from '../assets/teamimages/viniit.jpg';
 import srujal from '../assets/teamimages/srujal.jpg';
@@ -35,11 +35,11 @@ import nishita from '../assets/teamimages/nishita.jpg';
 import jaineel from '../assets/teamimages/malak.jpg';
 import nachiket from '../assets/teamimages/nachiket.jpg';
 import dhyey from '../assets/teamimages/Dhyey.jpeg';
-import mitul from '../assets/teamimages/malak.jpg';
+import mitul from '../assets/teamimages/mitul.jpg';
 import purvesha from '../assets/teamimages/purvesha.jpg';
-import shivang from '../assets/teamimages/malak.jpg';
+import shivang from '../assets/teamimages/shivang.jpg';
 import riddhi from '../assets/teamimages/riddhi.jpg';
-import yashh from '../assets/teamimages/yashh.HEIC';
+import yashh from '../assets/teamimages/yashh.jpg';
 
 
 const TeamSection = () => {
@@ -51,7 +51,7 @@ const TeamSection = () => {
       { 'name': "SamipyaSinh Rajput", 'image': "https://via.placeholder.com/150", 'designation': "ISTE Chief Coordinator", 'linkedin': "https://www.linkedin.com/in/samipyasinh-rajput-28b742242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { 'name': "Jenish Patel", 'image': "https://via.placeholder.com/150", 'designation': "Joint ISTE Chief Coordinator", 'linkedin': "https://www.linkedin.com/in/jenishxp?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
       { 'name': "Krutagna Patel", 'image': "https://via.placeholder.com/150", 'designation': "Joint ISTE Chief Coordinator", 'linkedin': "https://linkedin.com" },
-      { 'name': "Piyush Sharma", 'image': "https://via.placeholder.com/150", 'designation': "ISTE Finance Coordinator", 'linkedin': "https://linkedin.com" },
+      { 'name': "Piyush Sharma", image: piyush, 'designation': "ISTE Finance Coordinator", 'linkedin': "https://linkedin.com" },
       { 'name': "Yash Shah", 'image': "https://via.placeholder.com/150", 'designation': "Joint ISTE Finance Coordinator", 'linkedin': "https://www.linkedin.com/in/yash-shah-195a88283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { 'name': "Vinit Shah", image: vinit, 'designation': "Joint ISTE Finance Coordinator", 'linkedin': "https://www.linkedin.com/in/vinit-shah-aab33321b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { 'name': "Tarang Motiyani", 'image': tarang2, 'designation': "ISTE Website Coordinator", 'linkedin': "https://www.linkedin.com/in/tarang-motiyani-a05756255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
@@ -73,9 +73,9 @@ const TeamSection = () => {
       { 'name': "Arya Panchal", image: aryaa, 'designation': "Joint ISTE Technical Coordinator", 'linkedin': "https://www.linkedin.com/in/arya-panchal-ab8212268/" },
       { 'name': "Nachiket Brahmbhatt", image: nachiket, 'designation': "ISTE Non-Technical Coordinator", 'linkedin': "https://www.linkedin.com/in/nachiket-brahmbhatt-779677227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { 'name': "Dhyey Patel", image: dhyey, 'designation': "Joint ISTE Non-Technical Coordinator", 'linkedin': "https://www.linkedin.com/in/dhyey3074" },
-      { 'name': "Mitul Shimpi", image: "https://via.placeholder.com/150", 'designation': "Joint ISTE Non-Technical Coordinator", 'linkedin': "https://linkedin.com" },
+      { 'name': "Mitul Shimpi", image: mitul, 'designation': "Joint ISTE Non-Technical Coordinator", 'linkedin': "https://linkedin.com" },
       { 'name': "Purvesha Prajapati", image: purvesha, 'designation': "ISTE Graphics Coordinator", 'linkedin': "https://www.linkedin.com/in/purvesha-prajapati-169815255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-      { 'name': "Shivang Parmar", 'image': "https://via.placeholder.com/150", 'designation': "Joint ISTE Graphics Coordinator", 'linkedin': "https://www.linkedin.com/in/shivang-parmar" },
+      { 'name': "Shivang Parmar", image: shivang, 'designation': "Joint ISTE Graphics Coordinator", 'linkedin': "https://www.linkedin.com/in/shivang-parmar" },
       { 'name': "Riddhi Trevadiya", 'image': riddhi, 'designation': "Joint ISTE Graphics Coordinator", 'linkedin': "https://www.linkedin.com/in/riddhi-trevadiya" },
       { 'name': "Dhruva Desai", 'image': dhruva, 'designation': "ISTE Decoration Coordinator", 'linkedin': "https://www.linkedin.com/in/dhruva-desai-2314b4344/" },
       { 'name': "Kairavi Parikh", image: kairavi, 'designation': "Joint ISTE Decoration Coordinator", 'linkedin': "https://www.linkedin.com/in/kairavi-parikh-45704622b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },

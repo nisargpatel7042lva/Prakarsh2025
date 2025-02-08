@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "./styles/navbar.css";
-import logoImage from "../assets/logo1.png"; // Adjust the path to your image
+import logoImage from "../assets/logo1.png";
 import { useNavigate } from "react-router";
 
 const Navbar = () => {
@@ -10,35 +10,40 @@ const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   let lastScrollY = 0;
 
-  // Function to update isMobile state based on window size
+  // Debounced resize event
+  const handleResize = useCallback(() => {
+    setIsMobile(window.innerWidth <= 768);
+    if (window.innerWidth > 768) {
+      setIsOpen(false); // Close sidebar on desktop switch
+    }
+  }, []);
+
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      if (window.innerWidth > 768) {
-        setIsOpen(false); // Close sidebar when switching to desktop
-      }
-    };
+    const debounceResize = setTimeout(() => {
+      handleResize();
+    }, 150); // Debounce time for resize
 
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    return () => {
+      clearTimeout(debounceResize);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
 
   // Handle scroll event for hiding and showing the navbar
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        // Scroll Down
-        setShowNavbar(false);
-      } else {
-        // Scroll Up
-        setShowNavbar(true);
-      }
-      lastScrollY=window.scrollY;
-    };
+  const handleScroll = useCallback(() => {
+    if (window.scrollY > lastScrollY) {
+      setShowNavbar(false); // Scroll Down
+    } else {
+      setShowNavbar(true); // Scroll Up
+    }
+    lastScrollY = window.scrollY;
+  }, []);
 
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   const toggleMenu = () => {
     if (isMobile) {
@@ -46,21 +51,20 @@ const Navbar = () => {
     }
   };
 
-  const scrollToSection = (id) => {
+  const scrollToSection = useCallback((id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }, []);
 
-  const EventSection = ()=>{
-    if(window.location.pathname=='/'){
-      scrollToSection("events-section")
+  const EventSection = useCallback(() => {
+    if (window.location.pathname === "/") {
+      scrollToSection("events-section");
+    } else {
+      navigate("/events");
     }
-    else{
-      navigate('/events')
-    }
-  }
+  }, [navigate, scrollToSection]);
 
   return (
     <header className={`navbar ${showNavbar ? "show" : "hide"}`}>
@@ -88,22 +92,14 @@ const Navbar = () => {
           >
             HOME
           </li>
-          <li className="nav-item" onClick={() => { navigate("/aboutus") }}>
+          <li className="nav-item" onClick={() => navigate("/aboutus")}>
             ABOUT
           </li>
-          <li className="nav-item" onClick={() =>{
-            if(window.location.pathname=='/'){
-              scrollToSection("events-section")
-            }
-            else{
-              navigate('/events')
-            }
-          } 
-          }>
+          <li className="nav-item" onClick={EventSection}>
             EVENTS
           </li>
           <li className="nav-item">TIMELINE</li>
-          <li className="nav-item" onClick={() =>{scrollToSection("team-section")}}>
+          <li className="nav-item" onClick={() => scrollToSection("team-section")}>
             TEAM
           </li>
         </ul>
@@ -136,8 +132,7 @@ const Navbar = () => {
             <li className="nav-item" onClick={() => { toggleMenu(); navigate("/aboutus"); }}>
               ABOUT
             </li>
-            <li className="nav-item" onClick={() => { EventSection() ;toggleMenu();
-            }}>
+            <li className="nav-item" onClick={() => { EventSection(); toggleMenu(); }}>
               EVENTS
             </li>
             <li className="nav-item" onClick={() => { toggleMenu(); scrollToSection(""); }}>

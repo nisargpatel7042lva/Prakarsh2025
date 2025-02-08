@@ -19,6 +19,30 @@ import Stonk from "../assets/EventCardSvg/MemeForTrade.png";
 import techheist from "../assets/EventCardSvg/techheistbg.png";
 import ShareMarket from "../assets/EventCardSvg/MemeShareMarke.png";
 import RegisterButton from "./RegisterButton";
+import img_bitsbits from "../assets/Event Logos/Tech/Bits&Byte.png";
+import img_BrawlBridge from "../assets/Event Logos/Tech/BrawlBridge.png";
+import img_Cadathon from "../assets/Event Logos/Tech/Cadathon.png";
+import img_CryptoShowdown from "../assets/Event Logos/Tech/CryptoShowdown.png";
+import img_DesignversewithAI from "../assets/Event Logos/Tech/Designverse withAI.png";
+import img_GoogleChase from "../assets/Event Logos/Tech/GoogleChase.png";
+import img_RoboRace from "../assets/Event Logos/Tech/RoboRace.png";
+import img_StellarCosmos from "../assets/Event Logos/Tech/StellarCosmos.png";
+import img_TechHeist from "../assets/Event Logos/Tech/TechHeist.png";
+import img_TradeX from "../assets/Event Logos/Tech/TradeX.png";
+import img_VR from "../assets/Event Logos/Tech/VR.png";
+import img_BGMIConquest from "../assets/Event Logos/Non-Tech/BGMI Conquest.png";
+import img_BoxCricketLeague from "../assets/Event Logos/Non-Tech/Box Cricket League.png";
+import img_FreeFireClashofChampions from "../assets/Event Logos/Non-Tech/Free Fire Clash of Champions.png";
+import img_InfiniteQuest from "../assets/Event Logos/Non-Tech/Infinite Quest.png";
+import img_IPLAuction from "../assets/Event Logos/Non-Tech/IPL Auction.png";
+import img_MidnightMystery from "../assets/Event Logos/Non-Tech/Mindnight Mystery.png";
+import img_PickleballPalooz from "../assets/Event Logos/Non-Tech/Pickleball Palooz.png";
+import img_PopcornQuizzy from "../assets/Event Logos/Non-Tech/Popcorn Quizzy.png";
+import img_ValorantShowdown from "../assets/Event Logos/Non-Tech/Valorant Showdown.png";
+import img_Aeromodeling from "../assets/Event Logos/Workshop & Mega Event/The Art of Aero Modelling.png";
+import img_OpenR from "../assets/Event Logos/Workshop & Mega Event/Open-R.png";
+import img_IOTWorkshop from "../assets/Event Logos/Workshop & Mega Event/IOT Workshop.png";
+
 
 const eventsTypes = [
   { id: 1, name: "Tech" },
@@ -35,6 +59,7 @@ const events = [
     category: "Workshop",
     title: "IOT Workshop",
     img: IOTCircuit,
+    image:img_IOTWorkshop,
     details:
       "Dive into the world of IoT at Prakarsh25 with an engaging hands-on workshop! Master sensors like distance sensors and bring your ideas to life with real-time applications.",
   },
@@ -42,6 +67,7 @@ const events = [
     id: 2,
     category: "Workshop",
     title: "The Art Of Aero Modelling",
+    image:img_Aeromodeling,
     img: Viman,
     details:
       "Dive into the world of aerodynamics and innovation! Join our hands-on workshop where you’ll learn to design and build an RC plane from scratch.",
@@ -50,6 +76,7 @@ const events = [
     id: 3,
     category: "Tech",
     title: "Robo Race",
+    image:img_RoboRace,
     img: RoboRace,
     details:
       "Unleash your RC car’s potential on a dynamic track filled with thrilling hurdles, sharp turns, and speed challenges!",
@@ -59,6 +86,7 @@ const events = [
     category: "Tech",
     title: "Bits and Bytes",
     img: Bits_Bytes,
+    image: img_bitsbits,
     details:
       "“Bits and Bytes” takes you through three thrilling stages! Kick off with a brain-teasing IT and CS quiz, step up to the challenge of programming charades, then dive into a high-stakes auction to build the ultimate virtual system.",
   },
@@ -67,6 +95,7 @@ const events = [
     category: "Tech",
     title: "Designverse with AI",
     img: AiDesign,
+    image:img_DesignversewithAI,
     details:
       "Step into an exciting three-round creative showdown! Design a stunning logo, generate mesmerizing AI visuals based on prompts, and craft a striking advertisement banner while delivering a persuasive pitch.",
   },
@@ -75,6 +104,7 @@ const events = [
     category: "Tech",
     title: "Trade X- Tech and more",
     img: Stonk,
+    image:img_TradeX,
     details:
       "Experience the thrill of trading in our unique technology-driven event! Compete in teams, answer tech-centric questions to strategically boost your share prices, and emerge as the ultimate market leader with the highest shares.",
   },
@@ -83,6 +113,7 @@ const events = [
     category: "Tech",
     title: "TECH HEIST",
     img: techheist,
+    image:img_TechHeist,
     details:
       "Break the Code: Embark on a pulse-pounding spy-themed mission where elite teams of four face off in a race against time. Crack complex codes, debug challenging programs, outsmart mind-bending logic puzzles, and decrypt hidden messages.",
   },
@@ -91,6 +122,7 @@ const events = [
     category: "Tech",
     title: "CADATHON",
     img: RocketBlueprint,
+    image:img_Cadathon,
     details:
       "Gear up for CADATHON 2025! Begin with an expert lecture to gain insights and sharpen your skills in AutoCAD (2D) and Fusion 360 (3D). Then, dive into an exciting competition where your creativity and innovation will take center stage.",
   },
@@ -99,6 +131,7 @@ const events = [
     category: "Tech",
     title: "Google Chase: The Ultimate Treasure Hunt",
     img: TreasureHunt,
+    image:img_GoogleChase,
     details:
       "Embark on an adventurous campus-wide quest to collect the letters G-O-O-G-L-E by solving tech and non-tech challenges at each checkpoint. With immunity pins, lucky draws, and bonus cards adding twists, this high-energy treasure hunt ensures fun, teamwork, and excitement at every step!",
   },
@@ -107,6 +140,7 @@ const events = [
     category: "Tech",
     title: "¢rypto $howdown",
     img: ShareMarket,
+    image:img_CryptoShowdown,
     details:
       "Join CryptoShowdown 2025, the ultimate event for crypto enthusiasts, traders, and innovators. Explore bold strategies, cutting-edge ideas, and the future of digital finance. Trade dummy currencies to make real money.",
   },
@@ -114,6 +148,7 @@ const events = [
     id: 11,
     category: "Tech",
     title: "Stellar Cosmos",
+    image:img_StellarCosmos,
     details:
       "“Empty Epsilon” is a technical event where teams compete in a virtual space combat simulator, promoting teamwork, strategy, and quick thinking.",
   },
@@ -122,21 +157,24 @@ const events = [
     category: "Tech",
     img: Vr,
     title: "The Ultimate VR Experience",
+    image:img_VR,
     details:
       "Dive into a whole new dimension with The Ultimate VR Experience! Explore a custom-designed game that combines immersive virtual reality with interactive gameplay, offering participants a thrilling, cutting-edge adventure like no other!",
   },
   {
     id: 13,
     category: "Tech",
-    title: "Civil Bridge Event",
+    title: "Brawl Bridge",
+    image:img_BrawlBridge,
     details:
       "Cream sticks? For bridges? Get ready for Brawl Bridge! Teams race to build the most amazing structures, then watch the chaos unfold as they face the ultimate test of strength. Creativity vs. destruction – who will reign supreme?",
   },
   {
     id: 14,
     category: "NonTech",
-    title: "Box Cricket",
+    title: "Box Cricket League",
     img: Cricket,
+    image:img_BoxCricketLeague,
     details:
       "Step into the adrenaline-filled event of Box Cricket at PRAKARSH 2025! Experience the thrill of fast-paced cricket in a compact arena where strategy meets action.",
   },
@@ -144,17 +182,19 @@ const events = [
     id: 15,
     category: "ESports",
     title: "Valorant Showdown 3.0",
+    image:img_ValorantShowdown,
     details:
       "“Take the Stage, Claim the Title.” Gear up for the ultimate showdown in our Valorant Tournament, where strategy meets skill in Riot Games’ fast-paced tactical shooter.",
     contact: {
-      name: "Atul",
-      phone: "90164 61838",
+      name: "Vishv Shah",
+      phone: "+917016437251",
     },
   },
   {
     id: 16,
     category: "ESports",
-    title: "FREE FIRE TECH SHOWDOWN",
+    title: "Free Fire Clash of Champions",
+    image:img_FreeFireClashofChampions,
     details:
       "Where Gamers Rise and Champions Rule! An Event where you can compete against fellow enthusiasts in exciting Free Fire matches and win exciting prizes and cash rewards for your skills.",
     contact: {
@@ -167,6 +207,7 @@ const events = [
     category: "NonTech",
     title: "POPCORN QUIZZY",
     img: PopCorn,
+    image:img_PopcornQuizzy,
     details:
       "FUN, BRAIN, SMILE ACTION!! GET READY TO BRING YOUR A-GAME TO POPCORN QUIZZY, WHERE EVERY QUESTION IS A BLOCKBUSTER AND EVERY BUZZ IS A HIT!",
   },
@@ -175,13 +216,15 @@ const events = [
     category: "NonTech",
     img: Auction,
     title: "IPL Auction",
+    image:img_IPLAuction,
     details:
       "“Think, Bid, Win: Step into the Excitement of IPL Auction Strategy!” Experience the thrill of cricket strategy and team-building at our IPL Auction Challenge!",
   },
   {
     id: 19,
     category: "NonTech",
-    title: "Infinity Quest",
+    title: "Infinite Quest",
+    image:img_InfiniteQuest,
     img: Pirate2,
     details:
       "“A treasure hunt to the universe.” Get ready for “Infinity Quest,” an electrifying Marvel-themed treasure hunt with an engineering twist!",
@@ -191,6 +234,7 @@ const events = [
     category: "ESports",
     title: "BGMI Conquest",
     img: PUBG,
+    image:img_BGMIConquest,
     details:
       "Land. Fight. Dominate. The Battleground is Yours! The battle begins at BGMI, where warriors collide in an intense fight for survival!",
     contact: {
@@ -202,6 +246,7 @@ const events = [
     id: 21,
     category: "NonTech",
     title: "Midnight Mystery",
+    image:img_MidnightMystery,
     img: Maze,
     details:
       "“Face the dark, Escape the maze, Conquer the Mystery.” Step into a world of mystery and darkness with Challenges! This non-tech event is designed to test your instincts, teamwork, and problem-solving skills.",
@@ -209,16 +254,18 @@ const events = [
   {
     id: 22,
     category: "NonTech",
-    title: "Pickleball",
+    title: "Pickleball Palooz",
     img: "Hi",
+    image:img_PickleballPalooz,
     details:
       "“💥 Get ready for fast-paced rallies, fierce competition, and an electric atmosphere as teams battle it out for pickleball supremacy! This doubles-only tournament is open to all skill levels—just pure competition and skill. Whether you're a seasoned pro or a weekend warrior, grab a partner and showcase your teamwork, strategy, and power on the court! 🏆🔥",
   },
   {
     id: 23,
     category: "OpenR",
-    title: "OpenR",
+    title: "Open-R",
     img: "Hi",
+    image:img_OpenR,
     details:
       "“OpenR",
   },
@@ -274,6 +321,7 @@ export default function EventCard() {
               className={`card c${event.id} ${event.category}`}
               onClick={() => showCardDetails(event.id)}
             >
+            <img alt={event.title} src={event.image} class={`img ${event.id}`}></img>
               <h2>{event.title}</h2>
             </div>
           ))}

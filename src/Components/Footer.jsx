@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles/footer.css";
-import { FaInstagram } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa6";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
 import svitLogo from "../assets/svitlogo.png"; // Import the logo image
 import { NavLink } from "react-router-dom"; // Import NavLink
 
@@ -23,25 +22,27 @@ const Footer = () => {
         <div className="footer-grid">
           {/* Contact Us */}
           <div className="footer-section">
-            
-          <h3>Contact Us</h3>
-          <br/>
+            <h3>Contact Us</h3>
             <a href="mailto:contact@svitvasad.ac.in">contact@svitvasad.ac.in</a>
-            <br/><br/>
             <a href="tel:+918160695465">+91 8160695465</a>
-            
           </div>
 
           {/* Follow Us */}
           <div className="footer-section">
             <h3>Follow Us</h3>
             <div className="social-icons">
-           
-              <NavLink className="bi bi-twitter" to="https://www.instagram.com/svitprakarsh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
-                <FaInstagram/>
+              <NavLink
+                to="https://www.instagram.com/svitprakarsh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram />
               </NavLink>
-             
-              <NavLink to="https://www.youtube.com/@COAIDSVITVASAD" className="bi bi-youtube" target="_blank" rel="noopener noreferrer">
+              <NavLink
+                to="https://www.youtube.com/@COAIDSVITVASAD"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaYoutube />
               </NavLink>
             </div>
@@ -74,7 +75,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
-          <img src={svitLogo} alt="SVIT Logo" className="footer-logo" /> {/* Use the imported image */}
+          <img src={svitLogo} alt="SVIT Logo" className="footer-logo" />
           <p className="footer-text">Sardar Vallabhbhai Patel Institute of Technology</p>
         </div>
       </div>

@@ -5,6 +5,7 @@ h1, h2, h3, a {
     color: #fff;
     font-size: 16px;
 }
+
 .footer {
     margin-top: 4rem;
     color: white;
@@ -14,9 +15,7 @@ h1, h2, h3, a {
     padding-top: 1rem;
 }
 
-
 /* Marquee Styles */
-
 .space-marquee {
     background: rgba(0, 255, 242, 0.1);
     border-top: 1px solid rgba(0, 255, 242, 0.3);
@@ -43,9 +42,7 @@ h1, h2, h3, a {
     }
 }
 
-
 /* Hover Box */
-
 .hover-box {
     display: none;
     position: absolute;
@@ -91,9 +88,7 @@ h1, h2, h3, a {
     }
 }
 
-
 /* Footer Grid */
-
 .footer-container {
     padding: 2rem;
 }
@@ -117,9 +112,20 @@ h1, h2, h3, a {
     margin-bottom: 1rem;
 }
 
+/* Contact Us Section */
+.footer-section a {
+    display: block;
+    margin-bottom: 10px; /* Adds space between email and phone number */
+    position: relative;
+    color: #fff;
+}
+
+.footer-section a:hover .footer-logo {
+    transform: scale(1.1); /* Resize the image on hover */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
 
 /* Social Icons */
-
 .social-icons {
     display: flex;
     justify-content: center;
@@ -136,9 +142,7 @@ h1, h2, h3, a {
     color: #00fff2;
 }
 
-
 /* Map Styles */
-
 .map-container {
     position: relative;
     width: 100%;
@@ -163,22 +167,11 @@ h1, h2, h3, a {
     background: rgba(0, 255, 242, 0.1);
 }
 
-
 /* Footer Bottom */
-
 .footer-bottom {
     margin-top: 2rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(0, 255, 242, 0.3);
-}
-
-
-/* Responsive */
-
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* Footer Logo */
@@ -187,10 +180,16 @@ h1, h2, h3, a {
     height: auto; /* Maintain the aspect ratio */
     margin: 0 auto; /* Center the logo */
     display: block; /* Ensure it behaves as a block element */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Responsive Footer Logo */
     .footer-logo {
         width: 60px; /* Adjust size for smaller screens */
     }

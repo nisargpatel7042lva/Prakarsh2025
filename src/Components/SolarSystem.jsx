@@ -1,16 +1,6 @@
 import React, { useEffect } from 'react';
 import './styles/SolarSystem.css';  // Make sure to create this CSS file
 import sunImage from '../assets/sun.png';
-import mercuryImage from '../assets/mercury.png';
-import venusImage from '../assets/venus.png';
-import earthImage from '../assets/earth.png';
-import moonImage from '../assets/moon.png';
-import marsImage from '../assets/mars.png';
-import jupiterImage from '../assets/jupiter.png';
-import saturnImage from '../assets/saturn1.png';
-import uranusImage from '../assets/uranus.png';
-import neptuneImage from '../assets/neptune.png';
-import plutoImage from '../assets/pluto.png';
 
 const SolarSystem = () => {
     useEffect(() => {

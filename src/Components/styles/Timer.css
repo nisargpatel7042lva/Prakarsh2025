@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
 
-#canvasSolarSystem{
+#canvasSolarSystem {
     position: sticky;
-    width:  100%;
+    width: 100%;
 }
+
 /* General Styles */
 .timer-container {
     position: fixed;
@@ -34,8 +35,7 @@
 
 /* Floating animation */
 @keyframes float {
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
     50% {
@@ -118,9 +118,8 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    
     .timer-container {
-        position:sticky;
+        position: sticky;
         width: 100%;
         max-width: 300px;
         height: auto;
@@ -130,18 +129,29 @@
         transform: translateX(-50%);
         z-index: 1000;
     }
+
     .timer-heading {
         font-size: 1rem;
         margin-bottom: 5px;
     }
+
     .timer-grid {
         gap: 5px;
     }
+
     .timer-value {
         font-size: 1.2rem;
     }
+
     .timer-label {
         font-size: 0.8rem;
+    }
+
+    /* Adjust close button for mobile */
+    .close-btn {
+        top: 5px; /* Position adjustment */
+        right: 10px; /* Position adjustment */
+        margin-bottom: 10px; /* Adds a gap between the X and the text */
     }
 }
 
@@ -151,6 +161,7 @@
     top: 10px;
     right: 15px;
     font-size: 1.5rem;
+    background: transparent;
     color: #00eaff;
     cursor: pointer;
     transition: all 0.3s ease;

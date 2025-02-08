@@ -86,6 +86,7 @@
         background: rgba(50, 50, 50, 0.8);
         /* Darker background for contrast */
         border-radius: 10px;
+        align-items: center;
         /* Round the corners */
         padding: 15px;
         background: linear-gradient(45deg, rgb(85 19 100), rgb(0 0 0));
@@ -162,7 +163,10 @@
         text-align: center;
     }
     /* 📱 Mobile Responsiveness */
-    
+    .img{
+        max-height: 180px;
+    max-width: 180px;
+    }
     @media (max-width: 768px) {
         .card-container {
             grid-template-columns: repeat(2, 1fr);
@@ -182,7 +186,7 @@
         }
         .cardDetails {
             padding: 20px;
-            /* Less padding in event details */
+            /* Less padding in eent details */
             max-width: 90vw;
             max-height: 80vh;
             font-size: 14px;
@@ -200,12 +204,20 @@
         }
         .card {
             height: 150px;
+            align-items: center;
             /* Even smaller card height */
             padding: 8px;
+        }
+        .img{
+            max-width: 100px;
+            max-height: 100px;
         }
         .card.large-card {
             height: 200px;
             /* Shorten large card height */
+        }
+        h2{
+            font-size: 12px;
         }
         .cardDetails {
             padding: 15px;

@@ -9,7 +9,7 @@ const AboutUs = () => {
         <h1 className="AboutusTitle">About Us</h1>
         <h2 className="h2-AboutUs">Exploring the Future, Today</h2>
         <p className="p-AboutUs">
-          Welcome to <strong>Nebula Dynamics</strong>, where we push the
+          Welcome to <strong>PRAKARSH 2K25</strong>, where we push the
           boundaries of innovation and technology. Our mission is to create a
           future where humanity and technology coexist seamlessly, unlocking the
           mysteries of the universe and harnessing its potential. From advanced

@@ -321,7 +321,7 @@ export default function EventCard() {
               className={`card c${event.id} ${event.category}`}
               onClick={() => showCardDetails(event.id)}
             >
-            <img alt={event.title} src={event.image} class={`img ${event.id}`}></img>
+            <img alt={event.title} src={event.image} className={`img ${event.id}`}></img>
               <h2>{event.title}</h2>
             </div>
           ))}

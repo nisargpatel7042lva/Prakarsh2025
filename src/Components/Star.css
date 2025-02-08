@@ -1,12 +1,26 @@
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    animation: twinkle 1s infinite;
+/* General Styling for the Star Component */
+.star-container {
+    position: fixed; /* Ensures the stars are fixed in the background */
+    top: 0;
+    left: 0;
+    width: 100%; /* Covers full width */
+    height: 100%; /* Covers full height */
+    overflow: hidden; /* Prevents overflow and keeps the stars inside */
+    pointer-events: none; /* Allows interaction with other elements without interference */
 }
 
+/* Styling for individual stars */
+.star {
+    position: absolute;
+    width: 4px; /* Increased size for better visibility */
+    height: 4px; /* Increased size for better visibility */
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1s infinite ease-in-out;
+    opacity: 0;
+}
+
+/* Twinkling Animation */
 @keyframes twinkle {
     0% {
         opacity: 0;
@@ -16,5 +30,20 @@
     }
     100% {
         opacity: 0;
+    }
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .star {
+        width: 3px; /* Slightly reduce the star size on mobile */
+        height: 3px; /* Slightly reduce the star size on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .star {
+        width: 2px; /* Further reduce the star size on very small screens */
+        height: 2px; /* Further reduce the star size on very small screens */
     }
 }

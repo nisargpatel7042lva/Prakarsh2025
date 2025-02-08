@@ -30,12 +30,11 @@ export default function Homepage() {
     
     return (
         <>
-            <Star />
             <HeroSection />
-            <div className="homepage-container">
+             <div className="homepage-container">
                 <div className="SolarSystemBackground"><canvas id="canvasSolarSystemAlignment" ref={solarref}>
                     </canvas>
-                    </div>
+                    </div> 
                 
                 <Timer />
 

@@ -330,20 +330,7 @@
             transform: translateY(0px);
         }
     }
-    /* 
-body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: url("https://www.transparenttextures.com/patterns/stardust.png");
-    opacity: 0.2;
-    animation: stars 8s infinite linear;
-} */
-    /* ------------------------------------------------------- */
-    /* Event card image styling */
-    /* ------------------------------------------------------- */
-    /* Vr card */
+
     
     .event-12 {
         opacity: 40%;
@@ -370,10 +357,6 @@ body::before {
         opacity: 28%;
         z-index: -1;
         position: absolute;
-        /* left: -20%;
-       width: 130%;
-       aspect-ratio: 1/1; */
-        /* bottom: 0%; */
     }
     
     @media (max-width: 720px) {

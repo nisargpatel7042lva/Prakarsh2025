@@ -54,7 +54,7 @@ export default function Event_Random() {
   return (
     <>
       <div className="homeEventBar">
-        <h1 className="events-header">Events</h1>
+        <h1 className="events-header">EVENTS</h1>
       </div>
       <div className="card-container">
         {eventsTypes.map(eventsTypes => (

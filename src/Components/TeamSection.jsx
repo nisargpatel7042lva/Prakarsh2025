@@ -100,13 +100,7 @@ const TeamSection = () => {
     }
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % Math.ceil(coreTeam.length / 5));
-    }, 6000); // Change slide every 6 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+  
 
   const getDisplayedTeamMembers = () => {
     const startIndex = currentSlide * 5;

@@ -1,7 +1,8 @@
 /* Main container */
+
 .sponsor-container {
     width: 100%;
-    top:20px;
+    top: 20px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -17,7 +18,23 @@
     overflow: hidden;
 }
 
+
+/* Sponsor Titles */
+
+h3 {
+    font-size: 1.2rem;
+    /* Adjust the font size */
+    color: #ffffff;
+    margin-bottom: 10px;
+    /* Space between title and image */
+    text-align: center;
+    margin-top: 0;
+    /* Ensure no extra space before title */
+}
+
+
 /* Space background effect */
+
 .sponsor-container::before {
     content: '';
     position: absolute;
@@ -30,7 +47,9 @@
     pointer-events: none;
 }
 
+
 /* Main Sponsor */
+
 .main-sponsor {
     width: 100%;
     text-align: center;
@@ -47,7 +66,9 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 /* Sub sponsors container */
+
 .sub-sponsors {
     width: 100%;
     display: flex;
@@ -57,7 +78,9 @@
     z-index: 2;
 }
 
+
 /* Sponsor Row (Max 3 per row) */
+
 .sponsor-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -65,28 +88,50 @@
     justify-content: center;
 }
 
+
 /* Sponsor Box */
+
 .sponsor-box {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    /* Ensure content is centered */
 }
 
+
+/* Sponsor Content (h3 + img) */
+
+.sponsor-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Ensures content is centered vertically */
+}
+
+
 /* Sponsor Images */
+
 .sponsor-box img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     transition: transform 0.3s ease, filter 0.3s ease;
     filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
+    margin-top: 10px;
+    /* Space between image and title */
 }
 
+
 /* Hover Effects */
+
 .sponsor-box:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
@@ -98,13 +143,17 @@
     filter: drop-shadow(0 0 15px rgba(234, 0, 255, 0.9));
 }
 
+
 /* Fitness Sponsor Row */
+
 .sponsor-row-fitness {
     display: grid;
     justify-content: center;
 }
 
+
 /* Responsive: Stack on small screens */
+
 @media (max-width: 768px) {
     .sponsor-row {
         grid-template-columns: repeat(2, 1fr);

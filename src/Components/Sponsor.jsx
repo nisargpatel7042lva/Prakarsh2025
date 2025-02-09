@@ -21,57 +21,51 @@ const Sponsor = () => {
       {/* Sub Sponsors */}
       <div className="sub-sponsors">
         {/* Next 3 sponsors in a row */}
-        <div className="sponsor-row">
-          <div className="sponsor-box">
-            <div className="sponsor-content">
+        
+          <div className="sponsor-box1">
+            
               <h3>Jewellery Partner</h3>
               <img className="radhika-jewellers" src={RadhikaJewellers} alt="Radhika Jewellers Sponsor" />
-            </div>
           </div>
-          <div className="sponsor-box">
-            <div className="sponsor-content">
+          <div className="sponsor-box2">
+         
               <h3>Media partner </h3>
               <img src={SparkToday} alt="Spark Today Sponsor" />
-            </div>
+            
           </div>
-          <div className="sponsor-box">
-            <div className="sponsor-content">
+          <div className="sponsor-box3">
+   
               <h3>eSports partner </h3><br />
-              <img src={GamerzRig} alt="GamerzRig Sponsor" />
-            </div>
+              <img src={GamerzRig} alt="GamerzRig Sponsor" className="img1" />
+              <img src={Gamerzclan} alt="Gamerz Clan Sponsor" className="img2" />
+       
           </div>
-        </div>
+        
 
         {/* Other sponsors (max 3 per row) */}
-        <div className="sponsor-row">
-          <div className="sponsor-box">
+       
+          <div className="sponsor-box4">
             <div className="sponsor-content">
               <h3>Associate Sponsor</h3>
               <img src={AtlantaLogo} alt="Atlanta Logo Sponsor" />
             </div>
           </div>
-          <div className="sponsor-box">
+          <div className="sponsor-box5">
             <div className="sponsor-content">
               <h3>CAT partner </h3>
               <img src={IMS} alt="IMS Sponsor" />
             </div>
           </div>
-          <div className="sponsor-box">
-            <div className="sponsor-content">
-              <h3>eSports partner</h3>
-              <img src={Gamerzclan} alt="Gamerz Clan Sponsor" />
-            </div>
-          </div>
-        </div>
-
-        <div className="sponsor-row-fitness">
-          <div className="sponsor-box">
+          <div className="sponsor-box6">
             <div className="sponsor-content">
               <h3>Fitness Partner</h3>
-              <img src={SwoldierFitness} alt="Swoldier Fitness Sponsor" />
+              <img src={SwoldierFitness} alt="IMS Sponsor" />
             </div>
           </div>
-        </div>
+    
+
+    
+          
       </div>
     </div>
   );

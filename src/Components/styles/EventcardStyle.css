@@ -1,1175 +1,1507 @@
-    /* 🌌 Galaxy Background */
-    
-    body {
-        /* background: radial-gradient(circle at top, #1a002b, #0a001a); */
-        color: #00ffffcc;
-        font-family: "Orbitron", sans-serif;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow-x: hidden;
-        color: #00eaff;
-        text-shadow: 0 0 5px #00eaff;
-        /* Prevents horizontal scrolling */
-    }
-    
-    .register {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: #0a001a;
-    }
-    /* 🌠 Center Content Properly */
-    
-    .container1 {
-        margin-top: 100px;
-        /* Centers content */
-        padding: 20px;
-        text-align: center;
-    }
-    /* 🚀 Filter Buttons */
-    
-    .button-wrapper1 {
-        display: flex;
-        flex-wrap: wrap;
-        /* Allows buttons to wrap on small screens */
-        gap: 10px;
-        justify-content: center;
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 10;
-    }
-    
-    .button-wrapper1 button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        border: none;
-        border-radius: 30px;
-        background: transparent;
-        color: white;
-        font-weight: bold;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
-        position: relative;
-        z-index: 100;
-    }
-    
-    .button-wrapper1 button:hover {
-        background: linear-gradient(45deg, #ff00ff, #007bff);
-        box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8);
-        transform: scale(1.05);
-    }
-    
-    .button-wrapper1 button:focus {
-        background: linear-gradient(45deg, #ff00ff, #007bff);
-        box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8);
-        transform: scale(1.05);
-    }
-    /* 🎇 Event Cards */
-    
-    .card-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        /* Auto-fit the grid layout */
-        gap: 20px;
-        /* Space between cards */
-        padding: 20px;
-        box-sizing: border-box;
-        /* Ensures padding doesn't affect layout */
-        margin: 0;
-    }
-    /* Card Styling */
-    
-    .card {
-        background: rgba(50, 50, 50, 0.8);
-        /* Darker background for contrast */
-        border-radius: 10px;
-        align-items: center;
-        /* Round the corners */
-        padding: 15px;
-        background: linear-gradient(45deg, rgb(85 19 100), rgb(0 0 0));
-        /* Light glowing effect */
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 250px;
-        z-index: 10;
-        /* opacity: 0.7; */
-        /* Moderate height for each card */
-        box-sizing: border-box;
-        /* Ensures padding is inside */
-    }
-    /* Hover effect on cards */
-    
-    .card:hover {
-        transform: scale(1.05);
-        /* Slight scale on hover */
-        box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
-    }
-    /* Large Card Styling */
-    
-    .card.large-card {
-        height: 300px;
-        /* Adjust height for larger cards */
-        background: rgba(50, 50, 50, 0.9);
-        /* Darker background */
-        box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
-        /* Stronger box-shadow for large cards */
-    }
-    /* NEW: Gradient border effect on hover for large cards */
-    
-    .card.large-card::before {
-        content: "";
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-        background: linear-gradient(45deg, #ff6347, #00bfff, #ff1493);
-        border-radius: 10px;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-    }
-    
-    .card.large-card:hover::before {
-        opacity: 1;
-    }
-    /* Full-Screen Event Details */
-    
-    .cardDetails {
-        position: fixed;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(10, 10, 30, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-        color: #ffffff;
-        width: 80%;
-        max-width: 90vw;
-        height: 80%;
-        max-height: 90vh;
-        overflow: hidden;
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    /* 📱 Mobile Responsiveness */
-    
-    .img {
-        max-height: 180px;
-        max-width: 180px;
-    }
-    
-    @media (max-width: 768px) {
-        .card-container {
-            grid-template-columns: repeat(2, 1fr);
-            /* Two columns for medium screen sizes */
-            gap: 15px;
-            /* Slightly reduced gap for better fit */
-            padding: 10px;
-        }
-        .card {
-            height: 180px;
-            /* Shorter height for mobile */
-            padding: 10px;
-        }
-        .card.large-card {
-            height: 220px;
-            /* Adjust large cards for mobile */
-        }
-        .cardDetails {
-            padding: 20px;
-            /* Less padding in eent details */
-            max-width: 90vw;
-            max-height: 80vh;
-            font-size: 14px;
-            /* Smaller text size */
-        }
-    }
-    /* 📱 Extra Small Mobile Responsiveness */
-    
-    @media (max-width: 480px) {
-        .card-container {
-            grid-template-columns: 1fr;
-            /* Single column layout for very small screens */
-            gap: 10px;
-            /* Small gap for tight screen space */
-        }
-        .card {
-            height: 150px;
-            align-items: center;
-            /* Even smaller card height */
-            padding: 8px;
-        }
-        .img {
-            max-width: 100px;
-            max-height: 100px;
-        }
-        .card.large-card {
-            height: 200px;
-            /* Shorten large card height */
-        }
-        h2 {
-            font-size: 12px;
-        }
-        .cardDetails {
-            padding: 15px;
-            max-width: 90vw;
-            max-height: 80vh;
-        }
-    }
-    /* NEW: Gradient border effect on hover for plain boxes */
-    
-    .card::before {
-        content: "";
-    }
-    
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.8), 0px 0px 40px rgba(0, 255, 255, 0.5);
-    }
-    
-    .card:hover::before {
-        opacity: 1;
-    }
-    /* 🌟 Enlarged Full-Screen Event Details */
-    
-    .cardDetails {
-        position: fixed;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(10, 10, 30, 0.95);
-        /* Darker background for readability */
-        backdrop-filter: blur(12px);
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-        color: #ffffff;
-        max-width: 90vw;
-        /* Covers most of the screen width */
-        max-height: 90vh;
-        /* Covers most of the screen height */
-        width: 90%;
-        height: 90%;
-        overflow: hidden;
-        /* Allows scrolling if content is too long */
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    /* 🚀 Close Button - Adjusted for Larger Modal */
-    
-    .cross {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        width: 60px;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
-    }
-    
-    .cross:hover {
-        transform: rotate(90deg) scale(1.2);
-    }
-    /* 🛠️ Responsive Adjustments */
-    
-    @media (max-width: 768px) {
-        .button-wrapper {
-            flex-direction: column;
-            align-items: center;
-        }
-        .button-wrapper button {
-            width: 80%;
-            text-align: center;
-        }
-        .card-container {
-            grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
-            /* Smaller cards for small screens */
-        }
-        .cardDetails {
-            overflow: hidden;
-            width: 95%;
-            height: 95%;
-            max-width: 95vw;
-            max-height: 95vh;
-            padding: 20px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .card-container {
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        }
-        .button-wrapper button {
-            width: 100%;
-        }
-    }
-    /* 🌟 Twinkling Stars Effect */
-    
-    @keyframes stars {
-        0% {
-            opacity: 0.6;
-            transform: translateY(0px);
-        }
-        50% {
-            opacity: 1;
-            transform: translateY(-2px);
-        }
-        100% {
-            opacity: 0.6;
-            transform: translateY(0px);
-        }
-    }
-    
-    .event-12 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -30%;
-        width: 150%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 770px) {
-        .event-12 {
-            width: 50%;
-            left: 25%;
-            aspect-ratio: 1/1;
-            bottom: 0%;
-        }
-    }
-    /* Robo Race */
-    
-    .event-3 {
-        overflow: hidden;
-        opacity: 28%;
-        z-index: -1;
-        position: absolute;
-    }
-    
-    @media (max-width: 720px) {
-        .event-3 {
-            width: 100%;
-            left: 0%;
-            aspect-ratio: 1/1;
-            top: 0%;
-        }
-    }
-    
-    @media (min-width: 770px) and (max-width: 1000px) {
-        .event-3 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: 0%;
-        }
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1500px) {
-        .event-3 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    
-    @media (min-width: 1500px) {
-        .event-3 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -30%;
-        }
-    }
-    /* Bits and Bytes */
-    
-    .event-4 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -15%;
-        width: 130%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 700px) and (max-width: 1000px) {
-        .event-4 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1500px) {
-        .event-4 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -15%;
-        }
-    }
-    
-    @media (min-width: 1500px) {
-        .event-4 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -30%;
-        }
-    }
-    /* Aeroplane Modelling */
-    
-    .event-2 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 700px) and (max-width: 1000px) {
-        .event-2 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-2 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-2 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-2 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-2 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* TreasureHunt */
-    
-    .event-9 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-9 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-9 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-9 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-9 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* PopQuizz */
-    
-    .event-17 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-17 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-17 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-17 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-17 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* PopQuizz */
-    
-    .event-5 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-5 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-5 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-5 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-5 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* Cricket */
-    
-    .event-14 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-14 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-14 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-14 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-14 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* Infinity Quest */
-    
-    .event-19 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-19 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-19 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-19 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-19 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* IOT */
-    
-    .event-1 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-1 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-1 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-1 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-1 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* Maze */
-    
-    .event-21 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-21 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-21 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-21 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-21 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* Cadathon */
-    
-    .event-8 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-8 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-8 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-8 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-8 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* pubg */
-    
-    .event-20 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        bottom: 0%;
-    }
-    
-    @media (max-width: 770px) {
-        .event-20 {
-            width: 200%;
-            left: -45%;
-            aspect-ratio: 10/7;
-        }
-    }
-    
-    @media (min-width: 770px) and (max-width: 1000px) {
-        .event-20 {
-            width: 140%;
-            left: -5%;
-            aspect-ratio: 10/7;
-        }
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-20 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 10/7;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-20 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 10/7;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-20 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 10/7;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-20 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 10/7;
-            bottom: -10%;
-        }
-    }
-    /* IPLAuction */
-    
-    .event-18 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    .event-7 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: 20%;
-        width: 60%;
-        height: 70%;
-        aspect-ratio: 1/1;
-        bottom: 0%;
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-18 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-18 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-18 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-18 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* Tech And Trade */
-    
-    .event-6 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-    }
-    
-    @media (max-width: 770px) {
-        .event-6 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: 30%;
-        }
-    }
-    
-    @media (min-width: 770px) and (max-width: 1000px) {
-        .event-6 {
-            bottom: 5%;
-            width: 140%;
-            aspect-ratio: 10/7;
-        }
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-6 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-6 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-6 {
-            width: 65%;
-            left: 20%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-6 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* CrptoShodown*/
-    
-    .event-10 {
-        opacity: 40%;
-        z-index: -1;
-        position: absolute;
-        left: -13%;
-        width: 120%;
-    }
-    
-    @media (max-width: 629px) {
-        .event-10 {
-            width: 100%;
-            left: 2%;
-            aspect-ratio: 7/10;
-            bottom: 0%;
-        }
-    }
-    
-    @media (min-width: 629px) and (max-width: 770px) {
-        .event-10 {
-            bottom: 5%;
-            left: 10%;
-            width: 70%;
-            aspect-ratio: 7/10;
-        }
-    }
-    
-    @media (min-width: 770px) and (max-width: 1000px) {
-        .event-10 {
-            bottom: 5%;
-            width: 140%;
-            aspect-ratio: 10/7;
-        }
-    }
-    
-    @media (min-width: 1000px) and (max-width: 1300px) {
-        .event-10 {
-            width: 90%;
-            left: 5%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1300px) and (max-width: 1500px) {
-        .event-10 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -20%;
-        }
-    }
-    
-    @media (min-width: 1500px) and (max-width: 2450px) {
-        .event-10 {
-            width: 35%;
-            left: 30%;
-            aspect-ratio: 7/10;
-            bottom: 0%;
-        }
-    }
-    
-    @media (min-width: 2450px) {
-        .event-10 {
-            width: 80%;
-            left: 10%;
-            aspect-ratio: 1/1;
-            bottom: -10%;
-        }
-    }
-    /* Floating Register Button */
-    
-    .floating-register-button {
-        position: fixed;
-        /* Fixed position to keep it in place */
-        bottom: 20px;
-        /* Distance from the bottom */
-        right: 20px;
-        /* Distance from the right */
-        padding: 10px 20px;
-        /* Padding for better appearance */
-        background-color: #007bff;
-        /* Button background color */
-        color: white;
-        /* Text color */
-        border: none;
-        /* Remove border */
-        width: 200px;
-        border-radius: 5px;
-        /* Rounded corners */
-        cursor: pointer;
-        /* Pointer cursor on hover */
-        font-size: 16px;
-        /* Font size */
-        z-index: 1000;
-        /* Ensure it stays on top of other elements */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        /* Add a shadow for better visibility */
-    }
-    
-    .floating-register-button:hover {
-        background-color: #0056b3;
-        /* Change color on hover */
-    }
-    
-    .problem-statement-link {
-        text-decoration: underline;
-        color: white;
-        /* You can adjust the color */
-        font-weight: bold;
-        cursor: pointer;
-    }
-    
-    .problem-statement-link:hover {
-        color: rgb(92, 89, 89);
-        /* Darker shade for hover effect */
-    }
-    
-    .event-desc {
-        font-size: 36px;
-    }
-    
-    .openr-head {
-        font-size: 24px;
-    }
+/* 🌌 Galaxy Background */
+
+body {
+  /* background: radial-gradient(circle at top, #1a002b, #0a001a); */
+  color: #00ffffcc;
+  font-family: "Orbitron", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  color: #00eaff;
+  text-shadow: 0 0 5px #00eaff;
+  /* Prevents horizontal scrolling */
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0a001a;
+}
+/* 🌠 Center Content Properly */
+
+.container1 {
+  margin-top:3.5%;
+  /* Centers content */
+  padding: 20px;
+  text-align: center;
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .container1 {
+    margin-top: 15%;
+  }
+}
+
+/* 🚀 Filter Buttons */
+
+.button-wrapper1 {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows buttons to wrap on small screens */
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.button-wrapper1 button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+  position: relative;
+  z-index: 100;
+}
+
+.button-wrapper1 button:hover {
+  background: linear-gradient(45deg, #ff00ff, #007bff);
+  box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.button-wrapper1 button:focus {
+  background: linear-gradient(45deg, #ff00ff, #007bff);
+  box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8);
+  transform: scale(1.05);
+}
+/* 🎇 Event Cards */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* Auto-fit the grid layout */
+  gap: 20px;
+  /* Space between cards */
+  padding: 20px;
+  box-sizing: border-box;
+  /* Ensures padding doesn't affect layout */
+  margin: 0;
+}
+/* Card Styling */
+
+.card {
+  background: rgba(50, 50, 50, 0.8);
+  /* Darker background for contrast */
+  border-radius: 10px;
+  align-items: center;
+  /* Round the corners */
+  padding: 15px;
+  background: linear-gradient(45deg, rgb(85 19 100), rgb(0 0 0));
+  /* Light glowing effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+  z-index: 10;
+  /* opacity: 0.7; */
+  /* Moderate height for each card */
+  box-sizing: border-box;
+  /* Ensures padding is inside */
+}
+/* Hover effect on cards */
+
+.card:hover {
+  transform: scale(1.05);
+  /* Slight scale on hover */
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+}
+/* Large Card Styling */
+
+.card.large-card {
+  height: 300px;
+  /* Adjust height for larger cards */
+  background: rgba(50, 50, 50, 0.9);
+  /* Darker background */
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+  /* Stronger box-shadow for large cards */
+}
+/* NEW: Gradient border effect on hover for large cards */
+
+.card.large-card::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #ff6347, #00bfff, #ff1493);
+  border-radius: 10px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card.large-card:hover::before {
+  opacity: 1;
+}
+/* Full-Screen Event Details */
+
+.cardDetails {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(10, 10, 30, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  width: 80%;
+  max-width: 90vw;
+  height: 80%;
+  max-height: 90vh;
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* 📱 Mobile Responsiveness */
+
+.img {
+  max-height: 180px;
+  max-width: 180px;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns for medium screen sizes */
+    gap: 15px;
+    /* Slightly reduced gap for better fit */
+    padding: 10px;
+  }
+  .card {
+    height: 180px;
+    /* Shorter height for mobile */
+    padding: 10px;
+  }
+  .card.large-card {
+    height: 220px;
+    /* Adjust large cards for mobile */
+  }
+  .cardDetails {
+    padding: 20px;
+    /* Less padding in eent details */
+    max-width: 90vw;
+    max-height: 80vh;
+    font-size: 14px;
+    /* Smaller text size */
+  }
+}
+/* 📱 Extra Small Mobile Responsiveness */
+
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    /* Single column layout for very small screens */
+    gap: 10px;
+    /* Small gap for tight screen space */
+  }
+  .card {
+    height: 150px;
+    align-items: center;
+    /* Even smaller card height */
+    padding: 8px;
+  }
+  .img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  .card.large-card {
+    height: 200px;
+    /* Shorten large card height */
+  }
+  h2 {
+    font-size: 12px;
+  }
+  .cardDetails {
+    padding: 15px;
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+}
+/* NEW: Gradient border effect on hover for plain boxes */
+
+.card::before {
+  content: "";
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.8),
+    0px 0px 40px rgba(0, 255, 255, 0.5);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+/* 🌟 Enlarged Full-Screen Event Details */
+
+.cardDetails {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(10, 10, 30, 0.95);
+  /* Darker background for readability */
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  max-width: 90vw;
+  /* Covers most of the screen width */
+  max-height: 90vh;
+  /* Covers most of the screen height */
+  width: 90%;
+  height: 90%;
+  overflow: hidden;
+  /* Allows scrolling if content is too long */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/* 🚀 Close Button - Adjusted for Larger Modal */
+
+.cross {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 60px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cross:hover {
+  transform: rotate(90deg) scale(1.2);
+}
+/* 🛠️ Responsive Adjustments */
+
+@media (max-width: 768px) {
+  .button-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .button-wrapper button {
+    width: 80%;
+    text-align: center;
+  }
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Smaller cards for small screens */
+  }
+  .cardDetails {
+    overflow: hidden;
+    width: 95%;
+    height: 95%;
+    max-width: 95vw;
+    max-height: 95vh;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .button-wrapper button {
+    width: 100%;
+  }
+}
+/* 🌟 Twinkling Stars Effect */
+
+@keyframes stars {
+  0% {
+    opacity: 0.6;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(0px);
+  }
+}
+
+.event-12 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -30%;
+  width: 150%;
+  aspect-ratio: 1/1;
+  bottom: 0%;
+}
+
+@media (min-width: 770px) {
+  .event-12 {
+    width: 50%;
+    left: 25%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+/* Robo Race */
+
+.event-3 {
+  overflow: hidden;
+  opacity: 28%;
+  z-index: -1;
+  position: absolute;
+}
+
+@media (max-width: 720px) {
+  .event-3 {
+    width: 100%;
+    left: 0%;
+    aspect-ratio: 1/1;
+    top: 0%;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1000px) {
+  .event-3 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+  .event-3 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .event-3 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -30%;
+  }
+}
+/* Bits and Bytes */
+
+.event-4 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -15%;
+  width: 130%;
+  aspect-ratio: 1/1;
+  bottom: 0%;
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+  .event-4 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+  .event-4 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -15%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .event-4 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -30%;
+  }
+}
+/* Aeroplane Modelling */
+
+.event-2 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -13%;
+  width: 120%;
+  aspect-ratio: 1/1;
+  bottom: 0%;
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+  .event-2 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-2 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-2 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-2 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-2 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* TreasureHunt */
+
+.event-9 {
+  opacity: 30%;
+  z-index: -1;
+  position: absolute;
+  left: -50%;
+  width: 200%;
+  aspect-ratio: 1/1;
+  bottom: 0%;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-9 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-9 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-9 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-9 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* IPL */
+
+.event-13 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -13%;
+  width: 120%;
+  aspect-ratio: 1/1;
+  bottom: 0%;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-13 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-13 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-13 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-13 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* PopQuizz */
+
+.event-17 {
+  opacity: 20%;
+  z-index: -1;
+  position: absolute;
+  left: 0%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  bottom: 2%;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-17 {
+    width: 60%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-17 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-17 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-17 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* PopQuizz */
+
+.event-5 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -13%;
+  width: 120%;
+  aspect-ratio: 1/1;
+  bottom: 0%;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-5 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-5 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-5 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-5 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* Cricket */
+
+.event-11 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -13%;
+  width: 120%;
+  aspect-ratio: 1/1;
+  bottom: 0%;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-11 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-11 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-11 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-11 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* Infinity Quest */
+
+.event-19 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -5%;
+  top: 0%;
+  width: 120%;
+  aspect-ratio: 10/7;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-19 {
+    opacity: 40%;
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 10/7;
+    bottom: -20%;
+  }
+  
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-19 {
+    width: 100%;
+    left: 0%;
+    aspect-ratio: 10/7;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-19 {
+    width: 100%;
+    left: 0%;
+    aspect-ratio: 10/7;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-19 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* FreefIRE*/
+.event-15{
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: 0%;
+  width: 100%;
+  aspect-ratio: 10/7;
+  top: -5%;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-15 {
+    opacity: 40%;
+    width: 100%;
+    left: 2%;
+    aspect-ratio: 10/7;
+    top: -10%;
+  }
+  
+}
+
+/* Valorant */
+.event-14{
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: 0%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  top: -5%;
+}
+
+@media (min-width: 700px) {
+  .event-14 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    top: 10%;
+  }
+}
+
+@media(min-width: 1000px){
+  .event-14 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    top: -30%;
+  }
+}
+
+/* IOT */
+
+.event-1 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -13%;
+  width: 120%;
+  aspect-ratio: 1/1;
+  bottom: 0%;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-1 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-1 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-1 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-1 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* Maze */
+
+.event-21 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -13%;
+  width: 120%;
+  aspect-ratio: 1/1;
+  bottom: 30%;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-21 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-21 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -7%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-21 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+
+
+/* Cadathon */
+
+.event-8 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -13%;
+  width: 120%;
+  aspect-ratio: 1/1;
+  bottom: 20%;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-8 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-8 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-8 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-8 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* pubg */
+
+.event-20 {
+  opacity: 20%;
+  z-index: -1;
+  position: absolute;
+  left: -25%;
+  width: 140%;
+  aspect-ratio: 1/1;
+  bottom: 20%;
+}
+
+
+@media (min-width: 770px) and (max-width: 1000px) {
+  .event-20 {
+    width: 140%;
+    left: -20%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-20 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-20 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-20 {
+    width: 70%;
+    left: 15%;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-20 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+
+/* picklebal; */
+
+.event-23 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: 10%;
+  width: 120%;
+  bottom: 0%;
+  top: -5%;
+}
+
+@media (max-width: 770px) {
+  .event-23 {
+    width: 150%;
+    bottom: 0%;
+    top: 0%;
+    opacity: 20%;
+    left: -25%;
+    aspect-ratio: 10/7;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1000px) {
+  .event-23 {
+    width: 140%;
+    left: -15%;
+    aspect-ratio: 10/7;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-23 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 10/7;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-23 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 10/7;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-23 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 10/7;
+    bottom: -20%;
+  }
+}
+/* BGMI*/
+
+.event-16 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: 0%;
+  width: 120%;
+  bottom: -1%;
+}
+
+@media (max-width: 770px) {
+  .event-16 {
+    width: 200%;
+    bottom: 0%;
+    left: -50%;
+    aspect-ratio: 1/1;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1000px) {
+  .event-16 {
+    width: 140%;
+    left: -15%;
+    aspect-ratio: 10/7;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-16 {
+    width: 120%;
+    left: -5%;
+    aspect-ratio: 10/7;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-16 {
+    width: 130%;
+    left: -10%;
+    aspect-ratio: 10/7;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-16 {
+    width: 130%;
+    left: -10%;
+    aspect-ratio: 10/7;
+    bottom: -20%;
+  }
+}
+/* Infinity quest */
+
+.event-22 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  bottom: 0%;
+}
+
+@media (max-width: 770px) {
+  .event-22 {
+    width: 150%;
+    bottom: 10%;
+    left: -35%;
+    aspect-ratio: 10/7;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1000px) {
+  .event-22 {
+    width: 140%;
+    left: -20%;
+    aspect-ratio: 10/7;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-22 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 10/7;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-22 {
+    width: 80%;
+    left: 5%;
+    aspect-ratio: 10/7;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-22 {
+    width: 65%;
+    left: 12%;
+    aspect-ratio: 10/7;
+    bottom: 0%;
+  }
+}
+/* Box Cricket */
+
+.event-11 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -13%;
+  width: 120%;
+  bottom: 0%;
+}
+
+@media (max-width: 770px) {
+  .event-11 {
+    width: 150%;
+    bottom: 10%;
+    left: -35%;
+    aspect-ratio: 10/7;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1000px) {
+  .event-11 {
+    width: 140%;
+    left: -15%;
+    aspect-ratio: 10/7;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-11 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 10/7;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-11 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 10/7;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-11 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 10/7;
+    bottom: 0%;
+  }
+}
+@media (min-width: 2450px) {
+  .event-1 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 10/7;
+    bottom: 0%;
+  }
+}
+
+.event-7 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: 20%;
+  width: 70%;
+  aspect-ratio: 1/1;
+  bottom: -20%;
+}
+@media (min-width: 375px) and (max-width: 628px) {
+  .event-7 {
+    bottom: 5%;
+    left: -5%;
+    width: 120%;
+    bottom: 15%;
+    aspect-ratio: 1/1;
+  }
+}
+@media (min-width: 700px) and (max-width: 1200px) {
+  .event-7 {
+    bottom: 5%;
+    left: -10%;
+    width: 120%;
+    bottom: 0%;
+    aspect-ratio: 1/1;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-18 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-18 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-18 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-18 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* Tech And Trade */
+
+.event-6 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -13%;
+  width: 120%;
+}
+
+@media (max-width: 770px) {
+  .event-6 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: 30%;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1000px) {
+  .event-6 {
+    bottom: 5%;
+    width: 140%;
+    aspect-ratio: 10/7;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-6 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-6 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-6 {
+    width: 65%;
+    left: 20%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-6 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* CrptoShodown*/
+
+.event-10 {
+  opacity: 40%;
+  z-index: -1;
+  position: absolute;
+  left: -13%;
+  width: 120%;
+  bottom: 0%;
+  aspect-ratio: 7/10;
+}
+@media (min-width: 376px) and (max-width: 628px) {
+  .event-10 {
+    bottom: 5%;
+    left: 0%;
+    width: 120%;
+    bottom: 15%;
+    aspect-ratio: 7/10;
+  }
+}
+
+@media (min-width: 629px) and (max-width: 770px) {
+  .event-10 {
+    bottom: 5%;
+    left: 10%;
+    width: 70%;
+    aspect-ratio: 7/10;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1000px) {
+  .event-10 {
+    bottom: 5%;
+    width: 140%;
+    aspect-ratio: 10/7;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .event-10 {
+    width: 90%;
+    left: 5%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .event-10 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -20%;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2450px) {
+  .event-10 {
+    width: 35%;
+    left: 30%;
+    aspect-ratio: 7/10;
+    bottom: 0%;
+  }
+}
+
+@media (min-width: 2450px) {
+  .event-10 {
+    width: 80%;
+    left: 10%;
+    aspect-ratio: 1/1;
+    bottom: -10%;
+  }
+}
+/* Floating Register Button */
+
+.floating-register-button {
+  position: fixed;
+  /* Fixed position to keep it in place */
+  bottom: 20px;
+  /* Distance from the bottom */
+  right: 20px;
+  /* Distance from the right */
+  padding: 10px 20px;
+  /* Padding for better appearance */
+  background-color: #007bff;
+  /* Button background color */
+  color: white;
+  /* Text color */
+  border: none;
+  /* Remove border */
+  width: 200px;
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  font-size: 16px;
+  /* Font size */
+  z-index: 1000;
+  /* Ensure it stays on top of other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Add a shadow for better visibility */
+}
+
+.floating-register-button:hover {
+  background-color: #0056b3;
+  /* Change color on hover */
+}
+
+.problem-statement-link {
+  text-decoration: underline;
+  color: white;
+  /* You can adjust the color */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.problem-statement-link:hover {
+  color: rgb(92, 89, 89);
+  /* Darker shade for hover effect */
+}
+
+.event-desc {
+  font-size: 36px;
+}
+
+.openr-head {
+  font-size: 24px;
+}

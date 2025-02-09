@@ -1,38 +1,28 @@
-
-// export default TeamSection;
 import { useState} from 'react';
 import styled from 'styled-components';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import parth from '../assets/teamimages/parth.webp';
-import malak from '../assets/teamimages/malak.webp';  
-import sid from '../assets/teamimages/siddharth.webp';
-import dhaval from '../assets/teamimages/dhaval.webp';
-import tarang from '../assets/teamimages/tarang.webp';
 import tarang2 from '../assets/teamimages/tarang2.webp';
+import dax from '../assets/teamimages/dax.webp';
+import jaineel from '../assets/teamimages/jaineel.webp';
+import kashyap from '../assets/teamimages/kashyap.webp';
 import nisarg from '../assets/teamimages/nisarg.webp';
-import nidhi from '../assets/teamimages/nidhi.webp';
-import arya from '../assets/teamimages/arya.webp';
 import aryaa from '../assets/teamimages/arya2.webp';
-import samipya from '../assets/teamimages/malak.webp';
 import jenish from '../assets/teamimages/jenish.webp';
 import krutagna from '../assets/teamimages/krutagna.webp';
 import piyush from '../assets/teamimages/piyush.webp';
-import yash from '../assets/teamimages/yash.webp';
 import vinit from '../assets/teamimages/viniit.webp';
 import srujal from '../assets/teamimages/srujal.webp';
-import manan from '../assets/teamimages/malak.webp';
+import manan from '../assets/teamimages/manan.webp';
 import harshil from '../assets/teamimages/harshil.webp';
-import kashyap from '../assets/teamimages/malak.webp';
 import darshan from '../assets/teamimages/darshan.webp';
+import samipya from '../assets/teamimages/samipya.webp';
 import masoom from '../assets/teamimages/masoom.jpg';
 import pruth from '../assets/teamimages/pruth.webp';
 import dhruva from '../assets/teamimages/DHRUVA.webp';
 import kairavi from '../assets/teamimages/kairavi.webp';
 import sonu from '../assets/teamimages/sonu.webp';
 import vaishnavi from '../assets/teamimages/vaishnavi.webp';
-import dax from '../assets/teamimages/malak.webp';
 import nishita from '../assets/teamimages/nishita.webp';
-import jaineel from '../assets/teamimages/malak.webp';
 import nachiket from '../assets/teamimages/nachiket.webp';
 import dhyey from '../assets/teamimages/Dhyey.webp';
 import mitul from '../assets/teamimages/mitul.webp';
@@ -44,12 +34,12 @@ import DevTeam from './DevTeam';
 
 
 const TeamSection = () => {
-  const [activeTeam, setActiveTeam] = useState('core');
+  const [activeTeam, setActiveTeam] = useState('developer');
   const [currentSlide, setCurrentSlide] = useState(0);
 
   
   const coreTeam = [
-      { 'name': "SamipyaSinh Rajput", image: "https://via.placeholder.com/150", 'designation': "ISTE Chief Coordinator", 'linkedin': "https://www.linkedin.com/in/samipyasinh-rajput-28b742242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+      { 'name': "SamipyaSinh Rajput", image: samipya, 'designation': "ISTE Chief Coordinator", 'linkedin': "https://www.linkedin.com/in/samipyasinh-rajput-28b742242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { 'name': "Jenish Patel", image: jenish, 'designation': "Joint ISTE Chief Coordinator", 'linkedin': "https://www.linkedin.com/in/jenishxp?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
       { 'name': "Krutagna Patel", image: krutagna, 'designation': "Joint ISTE Chief Coordinator", 'linkedin': "https://www.linkedin.com/in/krutagna-patel-2a6a14260/" },
       { 'name': "Piyush Sharma", image: piyush, 'designation': "ISTE Finance Coordinator", 'linkedin': "https://linkedin.com" },
@@ -58,19 +48,19 @@ const TeamSection = () => {
       { 'name': "Tarang Motiyani", image: tarang2, 'designation': "ISTE Website Coordinator", 'linkedin': "https://www.linkedin.com/in/tarang-motiyani-a05756255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { 'name': "Arya Panchal", image: aryaa, 'designation': "Joint ISTE Website Coordinator", 'linkedin': "https://www.linkedin.com/in/arya-panchal-ab8212268/" },
       { 'name': "Nisarg Patel", image: nisarg, 'designation': "Joint ISTE Website Coordinator", 'linkedin': "https://www.linkedin.com/in/nisarg-patel-7b799a277/" },
-      { 'name': "Manan Shah", image: "https://via.placeholder.com/150", 'designation': "ISTE Social Media Marketing", 'linkedin': "https://www.linkedin.com/in/manan-shah-bb481b24b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
+      { 'name': "Manan Shah", image: manan, 'designation': "ISTE Social Media Marketing", 'linkedin': "https://www.linkedin.com/in/manan-shah-bb481b24b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
       { 'name': "Srujal Shah", image: srujal, 'designation': "Joint ISTE Social Media Marketing", 'linkedin': "https://www.linkedin.com/in/techking007/" },
       { 'name': "Harshilsinh Rana", image: harshil, 'designation': "Joint ISTE Social Media Marketing", 'linkedin': "https://www.linkedin.com/in/harshilsinh-rana-2b8b6b263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-      { 'name': "Kashyap Contractor", image: "https://via.placeholder.com/150", 'designation': "ISTE Administrative Coordinator", 'linkedin': "https://linkedin.com" },
+      { 'name': "Kashyap Contractor", image: kashyap, 'designation': "ISTE Administrative Coordinator", 'linkedin': "https://linkedin.com" },
       { 'name': "Darshan Panchal", image: darshan, 'designation': "Joint ISTE Administrative Coordinator", 'linkedin': "https://www.linkedin.com/in/darshan-panchal-335947298/" },
       { 'name': "Masoom Patel", image: masoom, 'designation': "Joint ISTE Administrative Coordinator", 'linkedin': "https://www.linkedin.com/in/masoom-patel-21b5a0326/" },
       { 'name': "Yash Shah", image: yashh, 'designation': "ISTE Sponsorship Coordinator", 'linkedin': "https://www.linkedin.com/in/yash-shah-195a88283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { 'name': "Pruth Shah", image: pruth, 'designation': "Joint ISTE Sponsorship Coordinator", 'linkedin': "https://linkedin.com" },
       { 'name': "Sonu Chaudhary", image: sonu, 'designation': "ISTE Promotion Coordinator", 'linkedin': "https://in.linkedin.com/in/sonu-choudhary-646265263" },
       { 'name': "Vaishnavi Parmar", image: vaishnavi, 'designation': "Joint ISTE Promotion Coordinator", 'linkedin': "https://www.linkedin.com/in/vaishnavi-parmar-3a7280344" },
-      { 'name': "Dax Patel", image: "https://via.placeholder.com/150", 'designation': "Joint ISTE Promotion Coordinator", 'linkedin': "https://linkedin.com" },
+      { 'name': "Dax Patel", image: dax, 'designation': "Joint ISTE Promotion Coordinator", 'linkedin': "https://linkedin.com" },
       { 'name': "Nishita Shahani", image: nishita, 'designation': "ISTE Technical Coordinator", 'linkedin': "https://www.linkedin.com/in/nishita-shahani-53b6b2277/" },
-      { 'name': "Jaineel Dalwadi", image: "https://via.placeholder.com/150", 'designation': "Joint ISTE Technical Coordinator", 'linkedin': "https://www.linkedin.com/in/jaineel-dalwadi-7914671a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+      { 'name': "Jaineel Dalwadi", image: jaineel, 'designation': "Joint ISTE Technical Coordinator", 'linkedin': "https://www.linkedin.com/in/jaineel-dalwadi-7914671a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { 'name': "Arya Panchal", image: aryaa, 'designation': "Joint ISTE Technical Coordinator", 'linkedin': "https://www.linkedin.com/in/arya-panchal-ab8212268/" },
       { 'name': "Nachiket Brahmbhatt", image: nachiket, 'designation': "ISTE Non-Technical Coordinator", 'linkedin': "https://www.linkedin.com/in/nachiket-brahmbhatt-779677227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { 'name': "Dhyey Patel", image: dhyey, 'designation': "Joint ISTE Non-Technical Coordinator", 'linkedin': "https://www.linkedin.com/in/dhyey3074" },
@@ -81,18 +71,6 @@ const TeamSection = () => {
       { 'name': "Dhruva Desai", image: dhruva, 'designation': "ISTE Decoration Coordinator", 'linkedin': "https://www.linkedin.com/in/dhruva-desai-2314b4344/" },
       { 'name': "Kairavi Parikh", image: kairavi, 'designation': "Joint ISTE Decoration Coordinator", 'linkedin': "https://www.linkedin.com/in/kairavi-parikh-45704622b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
   ]
-
-  // const developerTeam = [
-  //   { name: "Tarang Motiyani", image: tarang, designation: "Web Astronaut", github: "https://github.com/Tarang52" },
-  //   { name: "Arya Panchal", image: arya, designation: "Web Astronaut", github: "https://github.com/Arya664" },
-  //   { name: "Nisarg Patel", image: nisarg, designation: "Web Astronaut", github: "https://github.com/nisargpatel7042lva" },
-  //   { name: "Siddharth Panchal", image: sid, designation: "Web Astronaut", github: "https://github.com/siddharth-09" },
-  //   { name: "Dhaval Patel", image: dhaval, designation: "Web Astronaut", github: "https://github.com/DhavalPhooski" },
-  //   { name: "Nidhi Agrawal", image: nidhi, designation: "Web Astronaut", github: "https://github.com/NidhiAgrawal7574" },
-  //   { name: "Malak Bhadgaonkar", image: malak, designation: "Web Astronaut", github: "https://github.com/mal4k3009" },
-  //   { name: "Parth Bhatti", image: parth, designation: "Web Astronaut", github: "https://github.com/parthbhatti21" },
-  //   { name: "Yash Mehta", image: yash, designation: "Web Astronaut", github: "https://github.com/yashm13114" }
-  // ];
 
   const handleSocialClick = (url) => {
  // Prevent event from bubbling up
@@ -119,17 +97,18 @@ const TeamSection = () => {
   return (
     <StyledWrapper>
       <div className="button-group">
-        <button
-          className={`team-button ${activeTeam === 'core' ? 'active' : ''}`}
-          onClick={() => setActiveTeam('core')} // Set active team to 'core'
-        >
-          Core Team
-        </button>
+       
         <button
           className={`team-button ${activeTeam === 'developer' ? 'active' : ''}`}
           onClick={() => setActiveTeam('developer')} // Set active team to 'developer'
         >
           Developer Team
+        </button>
+        <button
+          className={`team-button ${activeTeam === 'core' ? 'active' : ''}`}
+          onClick={() => setActiveTeam('core')} // Set active team to 'core'
+        >
+          Core Team
         </button>
       </div>
 

@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./styles/footer.css";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
 import svitLogo from "../assets/svitlogo.png"; // Import the logo image
@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Contact Us</h3>
             <a href="mailto:contact@svitvasad.ac.in">contact@svitvasad.ac.in</a>
-            <a href="tel:+918160695465">+91 8160695465</a>
+            {/* <a href="tel:+918160695465">+91 8160695465</a> */}
           </div>
 
           {/* Follow Us */}

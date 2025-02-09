@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
-
 #canvasSolarSystem {
     position: sticky;
     width: 100%;
 }
 
+
 /* General Styles */
+
 .timer-container {
     position: fixed;
     top: 100px;
@@ -33,9 +34,12 @@
     font-weight: 700;
 }
 
+
 /* Floating animation */
+
 @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
         transform: translateY(0);
     }
     50% {
@@ -52,7 +56,9 @@
     animation: glow 2s infinite alternate;
 }
 
+
 /* Glowing effect */
+
 @keyframes glow {
     0% {
         text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
@@ -62,7 +68,9 @@
     }
 }
 
+
 /* Timer Grid Layout */
+
 .timer-grid {
     display: flex;
     justify-content: space-around;
@@ -93,7 +101,9 @@
     animation: glow 2s infinite alternate;
 }
 
+
 /* Floating Stars Background */
+
 .timer-container::before {
     content: "";
     position: absolute;
@@ -116,7 +126,9 @@
     }
 }
 
+
 /* Mobile Responsiveness */
+
 @media (max-width: 768px) {
     .timer-container {
         position: sticky;
@@ -129,33 +141,33 @@
         transform: translateX(-50%);
         z-index: 1000;
     }
-
     .timer-heading {
-        font-size: 1rem;
+        font-size: 10px;
         margin-bottom: 5px;
     }
-
     .timer-grid {
         gap: 5px;
     }
-
     .timer-value {
         font-size: 1.2rem;
     }
-
     .timer-label {
         font-size: 0.8rem;
     }
-
     /* Adjust close button for mobile */
     .close-btn {
-        top: 5px; /* Position adjustment */
-        right: 10px; /* Position adjustment */
-        margin-bottom: 10px; /* Adds a gap between the X and the text */
+        top: 5px;
+        padding-left: 3px;
+        padding-right: 3px;
+        /* Position adjustment */
+        right: 4px;
+        /* Adds a gap between the X and the text */
     }
 }
 
+
 /* Close Button */
+
 .close-btn {
     position: absolute;
     top: 10px;

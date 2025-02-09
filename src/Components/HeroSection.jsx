@@ -12,10 +12,8 @@ export default function HeroSection() {
   useEffect(() => {
     let resize;
     let recontrol;
-
-    // Load AstroPov Rive animation
     const r = new Rive({
-      src: "/AstroPov2.riv",
+      src: "/astropovwithsvit.riv",
       canvas: canvasAstroPovRef.current,
       autoplay: true,
       stateMachines: "State Machine 1",
@@ -28,7 +26,6 @@ export default function HeroSection() {
         recontrolRef.current = recontrol; // Store for resizing
       },
     });
-
     // Load Logo Rive animation
     const l = new Rive({
       src: "/PLogo.riv",

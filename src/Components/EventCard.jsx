@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import "../Components/styles/EventcardStyle.css";
 import CrossImg from "../assets/Cross.png";
@@ -14,13 +13,20 @@ export default function EventCard() {
   const savedEventType = localStorage.getItem("eventname");
 
   useEffect(() => {
-    setFilter(savedEventType || "All");
-    document.getElementById(savedEventType)?.focus();
+    const fetchData = async () => {
+      setFilter(savedEventType);
+      document.getElementById(savedEventType)?.focus();
+      // localStorage.removeItem('eventname');
+    };
+    fetchData();
   }, [savedEventType]);
 
   const showCardDetails = (eventId) => setSelectedEvent(eventId);
   const hideCardDetails = () => setSelectedEvent(null);
-
+  async function change(category){
+    setFilter(category);
+     localStorage.setItem('eventname',category);
+  }
   const filteredEvents = filter === "All" ? events : events.filter((event) => event.category === filter);
   const selectedEventDetails = events.find((event) => event.id === selectedEvent);
 
@@ -30,7 +36,7 @@ export default function EventCard() {
     <div className="container1">
       <div className="button-wrapper1">
         {eventCategories.map((category) => (
-          <button key={category} id={category} onClick={() => setFilter(category)}>
+          <button key={category} id={category} onClick={() => change(category)}>
             {category.replace(/([A-Z])/g, " $1").trim()} Events
           </button>
         ))}
@@ -41,6 +47,7 @@ export default function EventCard() {
           <div key={event.id} className={`card c${event.id} ${event.category}`} onClick={() => showCardDetails(event.id)}>
             <img alt={event.title} src={event.image} className={`img ${event.id}`} />
             <h2>{event.title}</h2>
+           
           </div>
         ))}
       </div>
@@ -52,6 +59,7 @@ export default function EventCard() {
             <img src={CrossImg} className="cross" alt="Close" onClick={hideCardDetails} />
             {selectedEventDetails.img && <img src={selectedEventDetails.img} className={`event-${selectedEvent}`} alt="" />}
             <h3 className="event-desc">{selectedEventDetails.details}</h3>
+            <p>{selectedEventDetails.discription}</p>
 
 
 
@@ -81,7 +89,7 @@ export default function EventCard() {
                   <p className="">
                     - Project/Prototype must be 70-80% implemented.
                     <br />
-                    - The project must satisfy the theme “Rural Development” on all bases.
+                    - The project must satisfy the theme "Rural Development" on all bases.
                     <br />
                     - A well-formatted document (hardcopy) is required, otherwise the project won't be considered.
                   </p>

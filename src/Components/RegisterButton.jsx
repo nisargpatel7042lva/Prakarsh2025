@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles/registerbutton.css';
 import registerImage from '../assets/astrouu.png'; // Import the image
 

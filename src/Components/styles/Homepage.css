@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 html{
     scroll-behavior: smooth;
 }
 #canvasSolarSystemAlignment{
-    transform: translateY(-50%) translateX(-22%);
-    width:  180%;
+    position: relative;
+    transform: translateY(-65%) translateX(-4%);
+    width:  110%;
+    height: 110%;
 }
 .homepage-container{
     width: 100%;
@@ -17,8 +20,11 @@ html{
     z-index: -2;
     left:-15%
 }
+
+
 @media(max-width:770px){
     .backgroundStars{
+        background-color: white;
         position: fixed;
         width: auto;
         height: 100%;
@@ -31,36 +37,60 @@ html{
     z-index: -1;
     position: fixed;
     width: 100%;
+    height: 100%;
+    transform: translateY(10%);
 }
 @media(min-width:770px){
     #canvasSolarSystemAlignment{
-        transform: translateY(-125%) translateX(7%);
-        width:  90%;
+        transform: translateY(-18%) translateX(0%);
+        width:  100%;
+        height: 100%;
     }
     .SolarSystemBackground{
         z-index: -1;
         position: fixed;
         width: 100%;
+        height: 100%;
+        transform: translateY(-100%);
     }
 }
 .co1{
-    justify-content: center;
-    z-index: 10;
     position: relative;
     border: 4px solid rgba(0, 255, 255, 0.5);
-    /* Cyan colored boundary with transparency */
-    display: flex;
+    display: flex
+;   bottom: 10px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 20px;
     background: rgba(0, 0, 0, 0.7);
-    /* Semi-transparent black background */
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-    /* Cyan glowing border effect */
-    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), inset 0 0 30px rgba(0, 255, 255, 0.3);
+    margin: 0px 0;
+    position: relative;
+    overflow: hidden;
 
 }
+.co1::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 255, 255, 0.1) 10px, rgba(0, 255, 255, 0.1) 20px);
+    animation: pattern-move 20s linear infinite;
+}
+
+@keyframes pattern-move {
+  0% {
+    transform: translate(-10%, -10%);
+  }
+  100% {
+    transform: translate(10%, 10%);
+  }
+}
+
+
 .name{
     
   text-align: center;
@@ -79,4 +109,35 @@ html{
   /* Takes up remaining space */
   margin-right: 0px;
   /* Adds spacing between header and button */
+}
+
+
+/* Space Neon Glow */
+
+    .neon {
+        margin-top: 20px;
+        z-index: 10;
+        padding-bottom: 10px;
+        color: #fff;
+        font-size: 4rem;
+        width: 100%;
+        font-weight: bold;
+        -webkit-text-stroke: 1px rgb(111, 1, 104); /* Black Border */
+        font-family: 'Orbitron', sans-serif;
+        text-shadow:
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 40px #6a0dad,  /* Deep Purple */
+            0 0 80px #4b0082,  /* Indigo */
+            0 0 100px #ff00ff, /* Pink Glow */
+            0 0 150px #9400d3; /* Dark Violet */
+    }
+    
+
+
+/* Container for text */
+
+div#timeline {
+    margin-top: 50px;
 }

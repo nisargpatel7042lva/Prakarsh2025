@@ -52,23 +52,34 @@ const Navbar = () => {
   };
 
   const scrollToSection = useCallback((id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+    if (window.location.pathname !== "/") {
+      navigate("/", { replace: true });
+      setTimeout(() => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Small delay to allow navigation to complete
+    } else {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
     }
-  }, []);
+  }, [navigate]);
+
 
   const EventSection = useCallback(() => {
     if (window.location.pathname === "/") {
       scrollToSection("events-section");
     } else {
-      navigate("/events");
+      navigate("events");
     }
   }, [navigate, scrollToSection]);
   const TimeLineSection = useCallback(() => {
     if (window.location.pathname === "/") {
       scrollToSection("timeline");
-    } 
+    }
   }, [navigate, scrollToSection]);
 
   return (
@@ -103,10 +114,13 @@ const Navbar = () => {
           <li className="nav-item" onClick={EventSection}>
             EVENTS
           </li>
-          <li className="nav-item" id="timeline-section"  onClick={TimeLineSection}>TIMELINE</li>
+          <li className="nav-item" onClick={() => scrollToSection("timeline")}>
+            TIMELINE
+          </li>
           <li className="nav-item" onClick={() => scrollToSection("team-section")}>
             TEAM
           </li>
+
         </ul>
       </nav>
 

@@ -66,14 +66,38 @@ body {
   margin-left: -1px;
 }
 
+.container2 .content {
+  padding: 30px 90px 30px 30px;
+  background: rgba(3, 211, 238, 0.2);
+  border: 2px solid rgba(3, 211, 238, 0.6);
+  opacity: 1;
+  position: relative;
+  border-radius: 0 500px 500px 0;
+  box-shadow: 0 0 10px rgba(3, 211, 238, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.container2 .content h2 {
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  text-align: center; /* Center the text */
+  width: 100%; /* Ensure the text container spans full width */
+  margin: 10px 0; /* Add some vertical spacing */
+}
+
+.container2.right .content {
+  padding: 30px 30px 30px 80px;
+  border-radius: 500px 0 0 500px;
+}
+
 .timeline-entry-image {
   width: 100%;
-  max-width: 250px; /* Increased from 150px to allow for better landscape view */
+  max-width: 250px;
   margin: 0 auto 10px;
   display: flex;
   justify-content: center;
-  aspect-ratio: 4/3; /* Forces a landscape aspect ratio */
-  overflow: hidden; /* Ensures images don't overflow their container */
+  aspect-ratio: 4/3;
+  overflow: hidden;
 }
 
 .timeline-entry-image img {
@@ -81,8 +105,8 @@ body {
   height: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  object-fit: cover; /* Makes images cover the area without distortion */
-  object-position: center; /* Centers the image within the container */
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Specific styling for portrait images (3rd and 5th) */

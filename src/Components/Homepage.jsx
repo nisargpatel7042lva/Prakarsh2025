@@ -57,7 +57,13 @@ export default function Homepage() {
                 <div id="team-section">
                     <TeamSection />
                 </div>
+                <div>
+                <div className="co1">
+                        <div className="name">Sponsors</div>
+
+                    </div>
                 <Sponsor />
+                </div>
             </div>
             <Footer />
         </>

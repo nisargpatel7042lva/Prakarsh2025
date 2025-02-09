@@ -1,7 +1,7 @@
 /* Main container */
-
 .sponsor-container {
     width: 100%;
+    top:20px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -9,65 +9,55 @@
     align-items: center;
     gap: 20px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    /* Semi-transparent white */
-    backdrop-filter: blur(10px);
-    /* Blur effect */
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-    /* Soft outer shadow */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Space background effect */
+.sponsor-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><circle cx="10%" cy="20%" r="2" fill="white" opacity="0.8"/><circle cx="30%" cy="50%" r="1" fill="white" opacity="0.6"/><circle cx="70%" cy="30%" r="1.5" fill="white" opacity="0.7"/><circle cx="90%" cy="80%" r="1" fill="white" opacity="0.6"/></svg>');
+    z-index: 1;
+    pointer-events: none;
+}
 
 /* Main Sponsor */
-
 .main-sponsor {
     width: 100%;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .main-sponsor img {
     max-width: 80%;
     height: auto;
-    border: 2px solid cyan;
-    box-shadow: 0 0 8px cyan, 0 4px 10px rgba(0, 255, 255, 0.3);
-    /* Softer glow */
+    border: 2px solid #00ffff;
     border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
-/* IMS Sponsor - Full width */
-
-.ims-sponsor {
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.ims-sponsor img {
-    max-width: 250px;
-    height: auto;
-    border: 2px solid cyan;
-    box-shadow: 0 0 8px cyan, 0 4px 10px rgba(0, 255, 255, 0.3);
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 
 /* Sub sponsors container */
-
 .sub-sponsors {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
+    z-index: 2;
 }
 
-
 /* Sponsor Row (Max 3 per row) */
-
 .sponsor-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -75,60 +65,52 @@
     justify-content: center;
 }
 
-
 /* Sponsor Box */
-
 .sponsor-box {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/* Sponsor Images with Softer Glow */
-
+/* Sponsor Images */
 .sponsor-box img {
-    max-width: 200px;
+    max-width: 100%;
     height: auto;
-    /* border: 2px solid cyan; */
     border-radius: 10px;
     transition: transform 0.3s ease, filter 0.3s ease;
-    filter: drop-shadow(0 0 2px cyan);
-    /* Cyan shadow around transparent parts */
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
 }
 
+/* Hover Effects */
+.sponsor-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+.sponsor-box img:hover,
+.main-sponsor img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(234, 0, 255, 0.9));
+}
+
+/* Fitness Sponsor Row */
 .sponsor-row-fitness {
     display: grid;
     justify-content: center;
 }
 
-
-/* Hover Effects */
-
-.sponsor-box img:hover,
-.main-sponsor img:hover,
-.ims-sponsor img:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 12px cyan);
-    /* Increased glow on hover */
-}
-
-.radhika-jewellers {
-    padding: 10px;
-}
-
-
 /* Responsive: Stack on small screens */
-
 @media (max-width: 768px) {
     .sponsor-row {
         grid-template-columns: repeat(2, 1fr);
     }
     .main-sponsor img {
         max-width: 90%;
-    }
-    .ims-sponsor img {
-        max-width: 200px;
     }
     .sponsor-box img {
         max-width: 80px;
@@ -141,9 +123,6 @@
     }
     .main-sponsor img {
         max-width: 100%;
-    }
-    .ims-sponsor img {
-        max-width: 180px;
     }
     .sponsor-box img {
         max-width: 150px;

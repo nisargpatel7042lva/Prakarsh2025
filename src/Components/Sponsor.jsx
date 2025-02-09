@@ -19,12 +19,9 @@ const Sponsor = () => {
 
       {/* Sub Sponsors */}
       <div className="sub-sponsors">
-        {/* IMS (Full Row) */}
-
-
         {/* Next 3 sponsors in a row */}
         <div className="sponsor-row">
-          <div className="sponsor-box ">
+          <div className="sponsor-box">
             <img className="radhika-jewellers" src={RadhikaJewellers} alt="Radhika Jewellers Sponsor" />
           </div>
           <div className="sponsor-box">
@@ -47,9 +44,10 @@ const Sponsor = () => {
             <img src={Gamerzclan} alt="Gamerz Clan Sponsor" />
           </div>
         </div>
+
         <div className="sponsor-row-fitness">
           <div className="sponsor-box">
-            <img src={SwoldierFitness} alt="Gamerz Clan Sponsor" />
+            <img src={SwoldierFitness} alt="Swoldier Fitness Sponsor" />
           </div>
         </div>
       </div>
